@@ -67,9 +67,8 @@ async function cachedJson<T>(
 			headers: {
 				accept: 'application/json',
 				'user-agent': 'PokemonChampionsTeamBuilderAssistant/1.0'
-			},
-			cf: { cacheTtl: Math.max(60, Math.round(ttlMs / 1000)), cacheEverything: true }
-		} as RequestInit);
+			}
+		});
 		if (!response.ok) throw new Error(`Battle Data returned ${response.status}`);
 		const value = schema.parse(await response.json());
 		if (cache.size >= MAX_CACHE_ENTRIES) cache.delete(cache.keys().next().value ?? '');

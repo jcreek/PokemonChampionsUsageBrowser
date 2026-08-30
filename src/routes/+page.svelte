@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
+	import { browser } from '$app/environment';
 	import { Search, RefreshCw, AlertCircle, ArrowUpDown } from '@lucide/svelte';
 	import manifestJson from '$lib/data/current-regulation.json';
 	import type { BattleFormat, PokemonRecord, RegulationManifest } from '$lib/types';
@@ -21,8 +23,10 @@
 		topItemPct: 'Top item share'
 	};
 
+	// See src/routes/+layout.svelte for why this is guarded — this route has no
+	// `ssr = false` of its own, so it's actually prerendered server-side.
 	let format = $derived<BattleFormat>(
-		page.url.searchParams.get('format') === 'Singles' ? 'Singles' : 'Doubles'
+		browser && page.url.searchParams.get('format') === 'Singles' ? 'Singles' : 'Doubles'
 	);
 	let pokemon = $state<PokemonRecord[]>([]);
 	let loading = $state(true);
@@ -56,7 +60,7 @@
 		loading = true;
 		loadError = '';
 		try {
-			const response = await fetch(`/api/pokemon?format=${requestedFormat}`);
+			const response = await fetch(`${base}/api/pokemon/${requestedFormat}.json`);
 			if (!response.ok) throw new Error('The community battle-data service did not respond.');
 			const result = await response.json();
 			if (format !== requestedFormat) return;
@@ -207,7 +211,7 @@
 						<tr class="row-link" tabindex="0" onclick={() => goToPokemon(entry)}>
 							<td class="position">{entry.usage.position ? `#${entry.usage.position}` : '—'}</td>
 							<td>
-								<a class="identity" href={`/pokemon/${entry.showdownId}?format=${format}`}>
+								<a class="identity" href={`${base}/pokemon/${entry.showdownId}?format=${format}`}>
 									<img
 										src={entry.sprite || SPRITE_FALLBACK}
 										alt=""

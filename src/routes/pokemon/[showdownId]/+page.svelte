@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { ArrowLeft } from '@lucide/svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import type { BattleFormat, UsageSnapshot } from '$lib/types';
 	import PokemonUsagePanel from '$lib/components/PokemonUsagePanel.svelte';
 	import type { PageProps } from './$types';
@@ -37,7 +38,7 @@
 		usageLoading = true;
 		usageError = '';
 		try {
-			const response = await fetch(`/api/pokemon/${showdownId}/usage?format=${format}&days=7`);
+			const response = await fetch(`${base}/api/pokemon/${format}/${showdownId}/usage`);
 			const body = response.ok ? await response.json() : null;
 			if (token !== requestToken) return;
 			if (body) usage = body;
@@ -65,7 +66,8 @@
 <svelte:window onkeydown={handleKeydown} />
 
 <div class="page" bind:this={pageEl} tabindex="-1">
-	<a class="back-link" href={`/?format=${data.format}`}><ArrowLeft size={15} /> Back to the field</a
+	<a class="back-link" href={`${base}/?format=${data.format}`}
+		><ArrowLeft size={15} /> Back to the field</a
 	>
 	<PokemonUsagePanel
 		pokemon={data.pokemon}
