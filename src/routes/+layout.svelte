@@ -2,6 +2,7 @@
 	import './global.css';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
+	import { base } from '$app/paths';
 	import { page } from '$app/state';
 	import { ChevronDown, Database, Radar, AlertCircle, ExternalLink } from '@lucide/svelte';
 	import manifestJson from '$lib/data/current-regulation.json';
@@ -11,11 +12,16 @@
 	let { children } = $props();
 	const manifest = manifestJson as RegulationManifest;
 
+	// `url.searchParams` can't be touched while a page is being prerendered (its output
+	// has to be the same for every query string) — the root route has no `ssr = false`
+	// of its own, so it's the one page in this app actually prerendered server-side.
+	// `browser` short-circuits before the getter runs during that build-time render.
 	let format = $derived<BattleFormat>(
-		page.url.searchParams.get('format') === 'Singles' ? 'Singles' : 'Doubles'
+		browser && page.url.searchParams.get('format') === 'Singles' ? 'Singles' : 'Doubles'
 	);
-	// Client-clock fallback for the first paint; refreshed from the server-authoritative
-	// endpoint on mount and whenever the tab regains focus.
+	// This is a static build — there's no server to ask "is the regulation active
+	// right now", so the client clock is authoritative, recomputed on mount and
+	// whenever the tab regains focus (in case it's been open across a boundary).
 	let active = $state(regulationIsActive(manifest));
 	let generatedAt = $state('');
 	let dataStale = $state(false);
@@ -27,21 +33,13 @@
 		window.location.href = url.toString();
 	}
 
-	async function refreshRegulationStatus() {
-		try {
-			const response = await fetch('/api/regulation/current');
-			if (!response.ok) return;
-			const result = await response.json();
-			if (typeof result.active === 'boolean') active = result.active;
-		} catch {
-			// Offline or the endpoint failed — keep the last known value rather than
-			// blocking the user on a network hiccup.
-		}
+	function refreshRegulationStatus() {
+		active = regulationIsActive(manifest);
 	}
 
 	async function refreshFreshness() {
 		try {
-			const response = await fetch(`/api/pokemon?format=${format}`);
+			const response = await fetch(`${base}/api/pokemon/${format}.json`);
 			if (!response.ok) return;
 			const result = await response.json();
 			generatedAt = result.generatedAt;
@@ -64,7 +62,7 @@
 
 <div class="app-shell">
 	<header class="topbar">
-		<a class="brand" href="/" aria-label="Champions Usage Browser home"
+		<a class="brand" href="{base}/" aria-label="Champions Usage Browser home"
 			><span><Radar size={21} /></span>
 			<div><strong>Champions</strong><small>Usage Browser</small></div></a
 		>
@@ -91,19 +89,19 @@
 		</div>
 		<nav class="primary-nav" aria-label="Primary navigation">
 			<a
-				class:active={page.url.pathname === '/'}
-				aria-current={page.url.pathname === '/' ? 'page' : undefined}
-				href={`/?format=${format}`}>Pokémon</a
+				class:active={page.url.pathname === `${base}/`}
+				aria-current={page.url.pathname === `${base}/` ? 'page' : undefined}
+				href={`${base}/?format=${format}`}>Pokémon</a
 			>
 			<a
-				class:active={page.url.pathname === '/moves'}
-				aria-current={page.url.pathname === '/moves' ? 'page' : undefined}
-				href={`/moves?format=${format}`}>Moves</a
+				class:active={page.url.pathname === `${base}/moves`}
+				aria-current={page.url.pathname === `${base}/moves` ? 'page' : undefined}
+				href={`${base}/moves?format=${format}`}>Moves</a
 			>
 			<a
-				class:active={page.url.pathname === '/abilities'}
-				aria-current={page.url.pathname === '/abilities' ? 'page' : undefined}
-				href={`/abilities?format=${format}`}>Abilities</a
+				class:active={page.url.pathname === `${base}/abilities`}
+				aria-current={page.url.pathname === `${base}/abilities` ? 'page' : undefined}
+				href={`${base}/abilities?format=${format}`}>Abilities</a
 			>
 		</nav>
 	</header>

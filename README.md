@@ -1,10 +1,10 @@
 # Champions Usage Browser
 
-A live usage-data browser for [Pokémon Champions](https://www.pokemonchampions.com/), built with
-SvelteKit, TypeScript, and deployed to Cloudflare Workers. It exists to answer one question —
-**"what's actually being used right now?"** — for the current regulation, by format (Singles /
-Doubles), per Pokémon: top moves, held items, abilities, natures, stat spreads and teammates, each
-with a recent trend, all backed by live data from
+A usage-data browser for [Pokémon Champions](https://www.pokemonchampions.com/), built with
+SvelteKit, TypeScript, and deployed as a static site to GitHub Pages. It exists to answer one
+question — **"what's actually being used right now?"** — for the current regulation, by format
+(Singles / Doubles), per Pokémon: top moves, held items, abilities, natures, stat spreads and
+teammates, each with a recent trend, backed by data from
 [Pokémon Champions Battle Data](https://championsbattledata.com/).
 
 **This is not a team builder.** It doesn't validate, save, or export a full team, and it never has
@@ -26,7 +26,9 @@ what's actually being played.
 - **`/moves`** and **`/abilities`** — reverse lookups: browse by move or ability to see which
   currently-eligible Pokémon can use it.
 - **`src/lib/server/battle-data.ts`** — the only thing that talks to championsbattledata.com;
-  normalizes its responses into this app's types and caches them at the edge.
+  normalizes its responses into this app's types. Since the site is a static build, this only ever
+  runs at build time, from `src/routes/api/pokemon`'s prerendered routes (see below) — never in a
+  visitor's browser.
 - **`src/lib/data/current-regulation.json`** — the reviewed regulation manifest (eligible Pokémon,
   Mega Evolution → stone mapping, format rules) that everything else is filtered against.
 - **`scripts/update-regulation.mjs`** — scrapes the official regulation notice and eligibility
@@ -34,6 +36,18 @@ what's actually being played.
   validation succeeds. The scheduled GitHub Actions workflow
   (`.github/workflows/regulation-update.yml`) runs this and opens a pull request for human review —
   it never deploys a scraped regulation directly.
+
+## Deployment
+
+The site is fully static (SvelteKit's `adapter-static`) and deploys to GitHub Pages via
+`.github/workflows/deploy.yml`, which builds and publishes on every push to `main`, once daily
+(`06:00 UTC`), and on manual dispatch. There's no server at runtime: the two `/api/pokemon/*`
+routes that talk to championsbattledata.com are prerendered into static JSON files at build time
+for every `{format, Pokémon}` combination, so "live" here means "as of the last build" — the daily
+schedule is what keeps that from going stale. Deep links like `/pokemon/pikachu` work via
+adapter-static's `fallback: '404.html'`: GitHub Pages serves that file (with a 404 status) for any
+unmatched path, and the app — already fully client-rendered — boots from it and resolves the real
+route client-side.
 
 ## Local development
 

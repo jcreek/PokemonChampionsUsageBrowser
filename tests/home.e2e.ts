@@ -78,10 +78,10 @@ function rosterFixture(pokemon: unknown[]) {
 }
 
 test.beforeEach(async ({ page }) => {
-	await page.route('**/api/pokemon?format=*', (route) =>
+	await page.route('**/api/pokemon/*.json', (route) =>
 		route.fulfill({ json: rosterFixture([mawile]) })
 	);
-	await page.route('**/api/pokemon/mawile/usage?*', (route) =>
+	await page.route('**/api/pokemon/*/mawile/usage', (route) =>
 		route.fulfill({
 			json: {
 				pokemon: 'Mawile',
@@ -125,7 +125,7 @@ test('returns to the field on Escape, mirroring the old drawer close', async ({ 
 test('shows the Mega Stone as ranked-but-not-top rather than blank when it is not the top item', async ({
 	page
 }) => {
-	await page.route('**/api/pokemon?format=*', (route) =>
+	await page.route('**/api/pokemon/*.json', (route) =>
 		route.fulfill({
 			json: rosterFixture([
 				{
@@ -185,7 +185,7 @@ test('shows a distinct error with retry when usage data fails to load, and recov
 	page
 }) => {
 	let usageShouldFail = true;
-	await page.route('**/api/pokemon/mawile/usage?*', (route) => {
+	await page.route('**/api/pokemon/*/mawile/usage', (route) => {
 		if (usageShouldFail) return route.fulfill({ status: 500, body: 'nope' });
 		return route.fulfill({
 			json: {
@@ -220,7 +220,7 @@ test('shows an empty state when filters match nothing, with a way to clear them'
 });
 
 test('sorts by a usage column', async ({ page }) => {
-	await page.route('**/api/pokemon?format=*', (route) =>
+	await page.route('**/api/pokemon/*.json', (route) =>
 		route.fulfill({ json: rosterFixture([mawile, garchomp]) })
 	);
 	await page.goto('/');
