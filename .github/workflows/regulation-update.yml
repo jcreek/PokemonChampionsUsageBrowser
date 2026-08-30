@@ -1,0 +1,46 @@
+name: Check current regulation
+
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Generate and validate candidate manifest
+        run: npm run regulation:update
+      - name: Run regulation and application tests
+        run: npm run test:unit -- --run
+      - name: Open or update review pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then exit 0; fi
+          branch="automation/current-regulation"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add src/lib/data/current-regulation.json src/lib/data/move-metadata.json src/lib/data/ability-metadata.json src/lib/data/held-items.json artifacts/regulation-validation.md
+          git commit -m "chore: refresh current regulation"
+          git push --force-with-lease origin "$branch"
+          gh pr view "$branch" >/dev/null 2>&1 || gh pr create --base main --head "$branch" --title "Review current Pokémon Champions regulation" --body "Automated candidate generated from the official regulation notice and eligibility page. Review the manifest diff and validation report before merging."
+      - name: Report validation failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Current regulation validation failed"
+          gh issue list --state open --search "$title in:title" --json number --jq '.[0].number' | grep -q . || gh issue create --title "$title" --body "The scheduled regulation check failed. Inspect workflow run $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID. The deployed application will continue to fail closed after the reviewed manifest expires."
