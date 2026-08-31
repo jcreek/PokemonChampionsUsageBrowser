@@ -1,1594 +1,1594 @@
 {
-	"schemaVersion": 1,
-	"id": "M-B",
-	"title": "Regulation Set M-B",
-	"startsAt": "2026-06-17T02:00:00.000Z",
-	"endsAt": "2026-09-09T01:59:00.000Z",
-	"verifiedAt": "2026-08-29T11:31:47.851Z",
-	"sources": {
-		"notice": "https://champions-news.pokemon-home.com/en/page/776.html",
-		"eligiblePokemon": "https://web-view.app.pokemonchampions.jp/battle/pages/events/rs178066986988lmoqpm/en/pokemon.html"
-	},
-	"sourceHashes": {
-		"notice": "f66f7c310bb3c722e26d4bdb1d417f9f3a18ec740731e030cc302de4797cb082",
-		"eligiblePokemon": "8b0c6db8dcd403bb1f5453c1c6f9ac35c80192762219a308c80023375a93d617"
-	},
-	"formats": {
-		"Singles": {
-			"minimumTeamSize": 3,
-			"maximumTeamSize": 6,
-			"bringSize": 3
-		},
-		"Doubles": {
-			"minimumTeamSize": 4,
-			"maximumTeamSize": 6,
-			"bringSize": 4
-		}
-	},
-	"rules": {
-		"speciesClause": true,
-		"itemClause": true,
-		"maximumMegaEvolutions": 1,
-		"maximumStatPointsPerStat": 32,
-		"maximumTotalStatPoints": 66
-	},
-	"eligiblePokemon": [
-		{
-			"formId": "0003-000",
-			"name": "Venusaur",
-			"showdownId": "venusaur"
-		},
-		{
-			"formId": "0006-000",
-			"name": "Charizard",
-			"showdownId": "charizard"
-		},
-		{
-			"formId": "0009-000",
-			"name": "Blastoise",
-			"showdownId": "blastoise"
-		},
-		{
-			"formId": "0015-000",
-			"name": "Beedrill",
-			"showdownId": "beedrill"
-		},
-		{
-			"formId": "0018-000",
-			"name": "Pidgeot",
-			"showdownId": "pidgeot"
-		},
-		{
-			"formId": "0024-000",
-			"name": "Arbok",
-			"showdownId": "arbok"
-		},
-		{
-			"formId": "0025-000",
-			"name": "Pikachu",
-			"showdownId": "pikachu"
-		},
-		{
-			"formId": "0026-000",
-			"name": "Raichu",
-			"showdownId": "raichu"
-		},
-		{
-			"formId": "0026-001",
-			"name": "Raichu (Alolan Form)",
-			"showdownId": "raichualola"
-		},
-		{
-			"formId": "0036-000",
-			"name": "Clefable",
-			"showdownId": "clefable"
-		},
-		{
-			"formId": "0038-000",
-			"name": "Ninetales",
-			"showdownId": "ninetales"
-		},
-		{
-			"formId": "0038-001",
-			"name": "Ninetales (Alolan Form)",
-			"showdownId": "ninetalesalola"
-		},
-		{
-			"formId": "0045-000",
-			"name": "Vileplume",
-			"showdownId": "vileplume"
-		},
-		{
-			"formId": "0059-000",
-			"name": "Arcanine",
-			"showdownId": "arcanine"
-		},
-		{
-			"formId": "0059-001",
-			"name": "Arcanine (Hisuian Form)",
-			"showdownId": "arcaninehisui"
-		},
-		{
-			"formId": "0065-000",
-			"name": "Alakazam",
-			"showdownId": "alakazam"
-		},
-		{
-			"formId": "0068-000",
-			"name": "Machamp",
-			"showdownId": "machamp"
-		},
-		{
-			"formId": "0071-000",
-			"name": "Victreebel",
-			"showdownId": "victreebel"
-		},
-		{
-			"formId": "0080-000",
-			"name": "Slowbro",
-			"showdownId": "slowbro"
-		},
-		{
-			"formId": "0080-002",
-			"name": "Slowbro (Galarian Form)",
-			"showdownId": "slowbrogalar"
-		},
-		{
-			"formId": "0094-000",
-			"name": "Gengar",
-			"showdownId": "gengar"
-		},
-		{
-			"formId": "0115-000",
-			"name": "Kangaskhan",
-			"showdownId": "kangaskhan"
-		},
-		{
-			"formId": "0121-000",
-			"name": "Starmie",
-			"showdownId": "starmie"
-		},
-		{
-			"formId": "0127-000",
-			"name": "Pinsir",
-			"showdownId": "pinsir"
-		},
-		{
-			"formId": "0128-000",
-			"name": "Tauros",
-			"showdownId": "tauros"
-		},
-		{
-			"formId": "0128-001",
-			"name": "Tauros (Paldean Form (Combat Breed))",
-			"showdownId": "taurospaldeacombat"
-		},
-		{
-			"formId": "0128-002",
-			"name": "Tauros (Paldean Form (Blaze Breed))",
-			"showdownId": "taurospaldeablaze"
-		},
-		{
-			"formId": "0128-003",
-			"name": "Tauros (Paldean Form (Aqua Breed))",
-			"showdownId": "taurospaldeaaqua"
-		},
-		{
-			"formId": "0130-000",
-			"name": "Gyarados",
-			"showdownId": "gyarados"
-		},
-		{
-			"formId": "0132-000",
-			"name": "Ditto",
-			"showdownId": "ditto"
-		},
-		{
-			"formId": "0134-000",
-			"name": "Vaporeon",
-			"showdownId": "vaporeon"
-		},
-		{
-			"formId": "0135-000",
-			"name": "Jolteon",
-			"showdownId": "jolteon"
-		},
-		{
-			"formId": "0136-000",
-			"name": "Flareon",
-			"showdownId": "flareon"
-		},
-		{
-			"formId": "0142-000",
-			"name": "Aerodactyl",
-			"showdownId": "aerodactyl"
-		},
-		{
-			"formId": "0143-000",
-			"name": "Snorlax",
-			"showdownId": "snorlax"
-		},
-		{
-			"formId": "0149-000",
-			"name": "Dragonite",
-			"showdownId": "dragonite"
-		},
-		{
-			"formId": "0154-000",
-			"name": "Meganium",
-			"showdownId": "meganium"
-		},
-		{
-			"formId": "0157-000",
-			"name": "Typhlosion",
-			"showdownId": "typhlosion"
-		},
-		{
-			"formId": "0157-001",
-			"name": "Typhlosion (Hisuian Form)",
-			"showdownId": "typhlosionhisui"
-		},
-		{
-			"formId": "0160-000",
-			"name": "Feraligatr",
-			"showdownId": "feraligatr"
-		},
-		{
-			"formId": "0168-000",
-			"name": "Ariados",
-			"showdownId": "ariados"
-		},
-		{
-			"formId": "0181-000",
-			"name": "Ampharos",
-			"showdownId": "ampharos"
-		},
-		{
-			"formId": "0184-000",
-			"name": "Azumarill",
-			"showdownId": "azumarill"
-		},
-		{
-			"formId": "0186-000",
-			"name": "Politoed",
-			"showdownId": "politoed"
-		},
-		{
-			"formId": "0196-000",
-			"name": "Espeon",
-			"showdownId": "espeon"
-		},
-		{
-			"formId": "0197-000",
-			"name": "Umbreon",
-			"showdownId": "umbreon"
-		},
-		{
-			"formId": "0199-000",
-			"name": "Slowking",
-			"showdownId": "slowking"
-		},
-		{
-			"formId": "0199-001",
-			"name": "Slowking (Galarian Form)",
-			"showdownId": "slowkinggalar"
-		},
-		{
-			"formId": "0205-000",
-			"name": "Forretress",
-			"showdownId": "forretress"
-		},
-		{
-			"formId": "0208-000",
-			"name": "Steelix",
-			"showdownId": "steelix"
-		},
-		{
-			"formId": "0211-000",
-			"name": "Qwilfish",
-			"showdownId": "qwilfish"
-		},
-		{
-			"formId": "0212-000",
-			"name": "Scizor",
-			"showdownId": "scizor"
-		},
-		{
-			"formId": "0214-000",
-			"name": "Heracross",
-			"showdownId": "heracross"
-		},
-		{
-			"formId": "0227-000",
-			"name": "Skarmory",
-			"showdownId": "skarmory"
-		},
-		{
-			"formId": "0229-000",
-			"name": "Houndoom",
-			"showdownId": "houndoom"
-		},
-		{
-			"formId": "0248-000",
-			"name": "Tyranitar",
-			"showdownId": "tyranitar"
-		},
-		{
-			"formId": "0254-000",
-			"name": "Sceptile",
-			"showdownId": "sceptile"
-		},
-		{
-			"formId": "0257-000",
-			"name": "Blaziken",
-			"showdownId": "blaziken"
-		},
-		{
-			"formId": "0260-000",
-			"name": "Swampert",
-			"showdownId": "swampert"
-		},
-		{
-			"formId": "0279-000",
-			"name": "Pelipper",
-			"showdownId": "pelipper"
-		},
-		{
-			"formId": "0282-000",
-			"name": "Gardevoir",
-			"showdownId": "gardevoir"
-		},
-		{
-			"formId": "0302-000",
-			"name": "Sableye",
-			"showdownId": "sableye"
-		},
-		{
-			"formId": "0303-000",
-			"name": "Mawile",
-			"showdownId": "mawile"
-		},
-		{
-			"formId": "0306-000",
-			"name": "Aggron",
-			"showdownId": "aggron"
-		},
-		{
-			"formId": "0308-000",
-			"name": "Medicham",
-			"showdownId": "medicham"
-		},
-		{
-			"formId": "0310-000",
-			"name": "Manectric",
-			"showdownId": "manectric"
-		},
-		{
-			"formId": "0319-000",
-			"name": "Sharpedo",
-			"showdownId": "sharpedo"
-		},
-		{
-			"formId": "0323-000",
-			"name": "Camerupt",
-			"showdownId": "camerupt"
-		},
-		{
-			"formId": "0324-000",
-			"name": "Torkoal",
-			"showdownId": "torkoal"
-		},
-		{
-			"formId": "0334-000",
-			"name": "Altaria",
-			"showdownId": "altaria"
-		},
-		{
-			"formId": "0350-000",
-			"name": "Milotic",
-			"showdownId": "milotic"
-		},
-		{
-			"formId": "0351-000",
-			"name": "Castform",
-			"showdownId": "castform"
-		},
-		{
-			"formId": "0354-000",
-			"name": "Banette",
-			"showdownId": "banette"
-		},
-		{
-			"formId": "0358-000",
-			"name": "Chimecho",
-			"showdownId": "chimecho"
-		},
-		{
-			"formId": "0359-000",
-			"name": "Absol",
-			"showdownId": "absol"
-		},
-		{
-			"formId": "0362-000",
-			"name": "Glalie",
-			"showdownId": "glalie"
-		},
-		{
-			"formId": "0376-000",
-			"name": "Metagross",
-			"showdownId": "metagross"
-		},
-		{
-			"formId": "0389-000",
-			"name": "Torterra",
-			"showdownId": "torterra"
-		},
-		{
-			"formId": "0392-000",
-			"name": "Infernape",
-			"showdownId": "infernape"
-		},
-		{
-			"formId": "0395-000",
-			"name": "Empoleon",
-			"showdownId": "empoleon"
-		},
-		{
-			"formId": "0398-000",
-			"name": "Staraptor",
-			"showdownId": "staraptor"
-		},
-		{
-			"formId": "0405-000",
-			"name": "Luxray",
-			"showdownId": "luxray"
-		},
-		{
-			"formId": "0407-000",
-			"name": "Roserade",
-			"showdownId": "roserade"
-		},
-		{
-			"formId": "0409-000",
-			"name": "Rampardos",
-			"showdownId": "rampardos"
-		},
-		{
-			"formId": "0411-000",
-			"name": "Bastiodon",
-			"showdownId": "bastiodon"
-		},
-		{
-			"formId": "0428-000",
-			"name": "Lopunny",
-			"showdownId": "lopunny"
-		},
-		{
-			"formId": "0442-000",
-			"name": "Spiritomb",
-			"showdownId": "spiritomb"
-		},
-		{
-			"formId": "0445-000",
-			"name": "Garchomp",
-			"showdownId": "garchomp"
-		},
-		{
-			"formId": "0448-000",
-			"name": "Lucario",
-			"showdownId": "lucario"
-		},
-		{
-			"formId": "0450-000",
-			"name": "Hippowdon",
-			"showdownId": "hippowdon"
-		},
-		{
-			"formId": "0454-000",
-			"name": "Toxicroak",
-			"showdownId": "toxicroak"
-		},
-		{
-			"formId": "0460-000",
-			"name": "Abomasnow",
-			"showdownId": "abomasnow"
-		},
-		{
-			"formId": "0461-000",
-			"name": "Weavile",
-			"showdownId": "weavile"
-		},
-		{
-			"formId": "0464-000",
-			"name": "Rhyperior",
-			"showdownId": "rhyperior"
-		},
-		{
-			"formId": "0470-000",
-			"name": "Leafeon",
-			"showdownId": "leafeon"
-		},
-		{
-			"formId": "0471-000",
-			"name": "Glaceon",
-			"showdownId": "glaceon"
-		},
-		{
-			"formId": "0472-000",
-			"name": "Gliscor",
-			"showdownId": "gliscor"
-		},
-		{
-			"formId": "0473-000",
-			"name": "Mamoswine",
-			"showdownId": "mamoswine"
-		},
-		{
-			"formId": "0475-000",
-			"name": "Gallade",
-			"showdownId": "gallade"
-		},
-		{
-			"formId": "0478-000",
-			"name": "Froslass",
-			"showdownId": "froslass"
-		},
-		{
-			"formId": "0479-000",
-			"name": "Rotom (Rotom)",
-			"showdownId": "rotom"
-		},
-		{
-			"formId": "0479-001",
-			"name": "Rotom (Heat Rotom)",
-			"showdownId": "rotomheat"
-		},
-		{
-			"formId": "0479-002",
-			"name": "Rotom (Wash Rotom)",
-			"showdownId": "rotomwash"
-		},
-		{
-			"formId": "0479-003",
-			"name": "Rotom (Frost Rotom)",
-			"showdownId": "rotomfrost"
-		},
-		{
-			"formId": "0479-004",
-			"name": "Rotom (Fan Rotom)",
-			"showdownId": "rotomfan"
-		},
-		{
-			"formId": "0479-005",
-			"name": "Rotom (Mow Rotom)",
-			"showdownId": "rotommow"
-		},
-		{
-			"formId": "0497-000",
-			"name": "Serperior",
-			"showdownId": "serperior"
-		},
-		{
-			"formId": "0500-000",
-			"name": "Emboar",
-			"showdownId": "emboar"
-		},
-		{
-			"formId": "0503-000",
-			"name": "Samurott",
-			"showdownId": "samurott"
-		},
-		{
-			"formId": "0503-001",
-			"name": "Samurott (Hisuian Form)",
-			"showdownId": "samurotthisui"
-		},
-		{
-			"formId": "0505-000",
-			"name": "Watchog",
-			"showdownId": "watchog"
-		},
-		{
-			"formId": "0510-000",
-			"name": "Liepard",
-			"showdownId": "liepard"
-		},
-		{
-			"formId": "0512-000",
-			"name": "Simisage",
-			"showdownId": "simisage"
-		},
-		{
-			"formId": "0514-000",
-			"name": "Simisear",
-			"showdownId": "simisear"
-		},
-		{
-			"formId": "0516-000",
-			"name": "Simipour",
-			"showdownId": "simipour"
-		},
-		{
-			"formId": "0518-000",
-			"name": "Musharna",
-			"showdownId": "musharna"
-		},
-		{
-			"formId": "0530-000",
-			"name": "Excadrill",
-			"showdownId": "excadrill"
-		},
-		{
-			"formId": "0531-000",
-			"name": "Audino",
-			"showdownId": "audino"
-		},
-		{
-			"formId": "0534-000",
-			"name": "Conkeldurr",
-			"showdownId": "conkeldurr"
-		},
-		{
-			"formId": "0545-000",
-			"name": "Scolipede",
-			"showdownId": "scolipede"
-		},
-		{
-			"formId": "0547-000",
-			"name": "Whimsicott",
-			"showdownId": "whimsicott"
-		},
-		{
-			"formId": "0553-000",
-			"name": "Krookodile",
-			"showdownId": "krookodile"
-		},
-		{
-			"formId": "0560-000",
-			"name": "Scrafty",
-			"showdownId": "scrafty"
-		},
-		{
-			"formId": "0563-000",
-			"name": "Cofagrigus",
-			"showdownId": "cofagrigus"
-		},
-		{
-			"formId": "0569-000",
-			"name": "Garbodor",
-			"showdownId": "garbodor"
-		},
-		{
-			"formId": "0571-000",
-			"name": "Zoroark",
-			"showdownId": "zoroark"
-		},
-		{
-			"formId": "0571-001",
-			"name": "Zoroark (Hisuian Form)",
-			"showdownId": "zoroarkhisui"
-		},
-		{
-			"formId": "0579-000",
-			"name": "Reuniclus",
-			"showdownId": "reuniclus"
-		},
-		{
-			"formId": "0584-000",
-			"name": "Vanilluxe",
-			"showdownId": "vanilluxe"
-		},
-		{
-			"formId": "0587-000",
-			"name": "Emolga",
-			"showdownId": "emolga"
-		},
-		{
-			"formId": "0604-000",
-			"name": "Eelektross",
-			"showdownId": "eelektross"
-		},
-		{
-			"formId": "0609-000",
-			"name": "Chandelure",
-			"showdownId": "chandelure"
-		},
-		{
-			"formId": "0614-000",
-			"name": "Beartic",
-			"showdownId": "beartic"
-		},
-		{
-			"formId": "0618-000",
-			"name": "Stunfisk",
-			"showdownId": "stunfisk"
-		},
-		{
-			"formId": "0618-001",
-			"name": "Stunfisk (Galarian Form)",
-			"showdownId": "stunfiskgalar"
-		},
-		{
-			"formId": "0623-000",
-			"name": "Golurk",
-			"showdownId": "golurk"
-		},
-		{
-			"formId": "0635-000",
-			"name": "Hydreigon",
-			"showdownId": "hydreigon"
-		},
-		{
-			"formId": "0637-000",
-			"name": "Volcarona",
-			"showdownId": "volcarona"
-		},
-		{
-			"formId": "0652-000",
-			"name": "Chesnaught",
-			"showdownId": "chesnaught"
-		},
-		{
-			"formId": "0655-000",
-			"name": "Delphox",
-			"showdownId": "delphox"
-		},
-		{
-			"formId": "0658-000",
-			"name": "Greninja",
-			"showdownId": "greninja"
-		},
-		{
-			"formId": "0660-000",
-			"name": "Diggersby",
-			"showdownId": "diggersby"
-		},
-		{
-			"formId": "0663-000",
-			"name": "Talonflame",
-			"showdownId": "talonflame"
-		},
-		{
-			"formId": "0666-018",
-			"name": "Vivillon",
-			"showdownId": "vivillonfancy"
-		},
-		{
-			"formId": "0668-000",
-			"name": "Pyroar",
-			"showdownId": "pyroar"
-		},
-		{
-			"formId": "0670-005",
-			"name": "Floette",
-			"showdownId": "floette"
-		},
-		{
-			"formId": "0671-000",
-			"name": "Florges",
-			"showdownId": "florges"
-		},
-		{
-			"formId": "0675-000",
-			"name": "Pangoro",
-			"showdownId": "pangoro"
-		},
-		{
-			"formId": "0676-000",
-			"name": "Furfrou",
-			"showdownId": "furfrou"
-		},
-		{
-			"formId": "0678-000",
-			"name": "Meowstic (Male)",
-			"showdownId": "meowsticf"
-		},
-		{
-			"formId": "0678-001",
-			"name": "Meowstic (Female)",
-			"showdownId": "meowstic"
-		},
-		{
-			"formId": "0681-000",
-			"name": "Aegislash",
-			"showdownId": "aegislash"
-		},
-		{
-			"formId": "0683-000",
-			"name": "Aromatisse",
-			"showdownId": "aromatisse"
-		},
-		{
-			"formId": "0685-000",
-			"name": "Slurpuff",
-			"showdownId": "slurpuff"
-		},
-		{
-			"formId": "0687-000",
-			"name": "Malamar",
-			"showdownId": "malamar"
-		},
-		{
-			"formId": "0689-000",
-			"name": "Barbaracle",
-			"showdownId": "barbaracle"
-		},
-		{
-			"formId": "0691-000",
-			"name": "Dragalge",
-			"showdownId": "dragalge"
-		},
-		{
-			"formId": "0693-000",
-			"name": "Clawitzer",
-			"showdownId": "clawitzer"
-		},
-		{
-			"formId": "0695-000",
-			"name": "Heliolisk",
-			"showdownId": "heliolisk"
-		},
-		{
-			"formId": "0697-000",
-			"name": "Tyrantrum",
-			"showdownId": "tyrantrum"
-		},
-		{
-			"formId": "0699-000",
-			"name": "Aurorus",
-			"showdownId": "aurorus"
-		},
-		{
-			"formId": "0700-000",
-			"name": "Sylveon",
-			"showdownId": "sylveon"
-		},
-		{
-			"formId": "0701-000",
-			"name": "Hawlucha",
-			"showdownId": "hawlucha"
-		},
-		{
-			"formId": "0702-000",
-			"name": "Dedenne",
-			"showdownId": "dedenne"
-		},
-		{
-			"formId": "0706-000",
-			"name": "Goodra",
-			"showdownId": "goodra"
-		},
-		{
-			"formId": "0706-001",
-			"name": "Goodra (Hisuian Form)",
-			"showdownId": "goodrahisui"
-		},
-		{
-			"formId": "0707-000",
-			"name": "Klefki",
-			"showdownId": "klefki"
-		},
-		{
-			"formId": "0709-000",
-			"name": "Trevenant",
-			"showdownId": "trevenant"
-		},
-		{
-			"formId": "0711-000",
-			"name": "Gourgeist (Medium Variety)",
-			"showdownId": "gourgeist"
-		},
-		{
-			"formId": "0711-001",
-			"name": "Gourgeist (Small Variety)",
-			"showdownId": "gourgeistsmall"
-		},
-		{
-			"formId": "0711-002",
-			"name": "Gourgeist (Large Variety)",
-			"showdownId": "gourgeistlarge"
-		},
-		{
-			"formId": "0711-003",
-			"name": "Gourgeist (Jumbo Variety)",
-			"showdownId": "gourgeistsuper"
-		},
-		{
-			"formId": "0713-000",
-			"name": "Avalugg",
-			"showdownId": "avalugg"
-		},
-		{
-			"formId": "0713-001",
-			"name": "Avalugg (Hisuian Form)",
-			"showdownId": "avalugghisui"
-		},
-		{
-			"formId": "0715-000",
-			"name": "Noivern",
-			"showdownId": "noivern"
-		},
-		{
-			"formId": "0724-000",
-			"name": "Decidueye",
-			"showdownId": "decidueye"
-		},
-		{
-			"formId": "0724-001",
-			"name": "Decidueye (Hisuian Form)",
-			"showdownId": "decidueyehisui"
-		},
-		{
-			"formId": "0727-000",
-			"name": "Incineroar",
-			"showdownId": "incineroar"
-		},
-		{
-			"formId": "0730-000",
-			"name": "Primarina",
-			"showdownId": "primarina"
-		},
-		{
-			"formId": "0733-000",
-			"name": "Toucannon",
-			"showdownId": "toucannon"
-		},
-		{
-			"formId": "0740-000",
-			"name": "Crabominable",
-			"showdownId": "crabominable"
-		},
-		{
-			"formId": "0745-000",
-			"name": "Lycanroc (Midday Form)",
-			"showdownId": "lycanroc"
-		},
-		{
-			"formId": "0745-001",
-			"name": "Lycanroc (Midnight Form)",
-			"showdownId": "lycanrocmidnight"
-		},
-		{
-			"formId": "0745-002",
-			"name": "Lycanroc (Dusk Form)",
-			"showdownId": "lycanrocdusk"
-		},
-		{
-			"formId": "0748-000",
-			"name": "Toxapex",
-			"showdownId": "toxapex"
-		},
-		{
-			"formId": "0750-000",
-			"name": "Mudsdale",
-			"showdownId": "mudsdale"
-		},
-		{
-			"formId": "0752-000",
-			"name": "Araquanid",
-			"showdownId": "araquanid"
-		},
-		{
-			"formId": "0758-000",
-			"name": "Salazzle",
-			"showdownId": "salazzle"
-		},
-		{
-			"formId": "0763-000",
-			"name": "Tsareena",
-			"showdownId": "tsareena"
-		},
-		{
-			"formId": "0765-000",
-			"name": "Oranguru",
-			"showdownId": "oranguru"
-		},
-		{
-			"formId": "0766-000",
-			"name": "Passimian",
-			"showdownId": "passimian"
-		},
-		{
-			"formId": "0778-000",
-			"name": "Mimikyu",
-			"showdownId": "mimikyu"
-		},
-		{
-			"formId": "0780-000",
-			"name": "Drampa",
-			"showdownId": "drampa"
-		},
-		{
-			"formId": "0784-000",
-			"name": "Kommo-o",
-			"showdownId": "kommoo"
-		},
-		{
-			"formId": "0823-000",
-			"name": "Corviknight",
-			"showdownId": "corviknight"
-		},
-		{
-			"formId": "0841-000",
-			"name": "Flapple",
-			"showdownId": "flapple"
-		},
-		{
-			"formId": "0842-000",
-			"name": "Appletun",
-			"showdownId": "appletun"
-		},
-		{
-			"formId": "0844-000",
-			"name": "Sandaconda",
-			"showdownId": "sandaconda"
-		},
-		{
-			"formId": "0855-000",
-			"name": "Polteageist",
-			"showdownId": "polteageist"
-		},
-		{
-			"formId": "0858-000",
-			"name": "Hatterene",
-			"showdownId": "hatterene"
-		},
-		{
-			"formId": "0861-000",
-			"name": "Grimmsnarl",
-			"showdownId": "grimmsnarl"
-		},
-		{
-			"formId": "0866-000",
-			"name": "Mr. Rime",
-			"showdownId": "mrrime"
-		},
-		{
-			"formId": "0867-000",
-			"name": "Runerigus",
-			"showdownId": "runerigus"
-		},
-		{
-			"formId": "0869-000",
-			"name": "Alcremie",
-			"showdownId": "alcremie"
-		},
-		{
-			"formId": "0870-000",
-			"name": "Falinks",
-			"showdownId": "falinks"
-		},
-		{
-			"formId": "0877-000",
-			"name": "Morpeko",
-			"showdownId": "morpeko"
-		},
-		{
-			"formId": "0887-000",
-			"name": "Dragapult",
-			"showdownId": "dragapult"
-		},
-		{
-			"formId": "0899-000",
-			"name": "Wyrdeer",
-			"showdownId": "wyrdeer"
-		},
-		{
-			"formId": "0900-000",
-			"name": "Kleavor",
-			"showdownId": "kleavor"
-		},
-		{
-			"formId": "0902-000",
-			"name": "Basculegion (Male)",
-			"showdownId": "basculegion"
-		},
-		{
-			"formId": "0902-001",
-			"name": "Basculegion (Female)",
-			"showdownId": "basculegionf"
-		},
-		{
-			"formId": "0903-000",
-			"name": "Sneasler",
-			"showdownId": "sneasler"
-		},
-		{
-			"formId": "0904-000",
-			"name": "Overqwil",
-			"showdownId": "overqwil"
-		},
-		{
-			"formId": "0908-000",
-			"name": "Meowscarada",
-			"showdownId": "meowscarada"
-		},
-		{
-			"formId": "0911-000",
-			"name": "Skeledirge",
-			"showdownId": "skeledirge"
-		},
-		{
-			"formId": "0914-000",
-			"name": "Quaquaval",
-			"showdownId": "quaquaval"
-		},
-		{
-			"formId": "0925-000",
-			"name": "Maushold",
-			"showdownId": "mausholdfour"
-		},
-		{
-			"formId": "0934-000",
-			"name": "Garganacl",
-			"showdownId": "garganacl"
-		},
-		{
-			"formId": "0936-000",
-			"name": "Armarouge",
-			"showdownId": "armarouge"
-		},
-		{
-			"formId": "0937-000",
-			"name": "Ceruledge",
-			"showdownId": "ceruledge"
-		},
-		{
-			"formId": "0939-000",
-			"name": "Bellibolt",
-			"showdownId": "bellibolt"
-		},
-		{
-			"formId": "0952-000",
-			"name": "Scovillain",
-			"showdownId": "scovillain"
-		},
-		{
-			"formId": "0956-000",
-			"name": "Espathra",
-			"showdownId": "espathra"
-		},
-		{
-			"formId": "0959-000",
-			"name": "Tinkaton",
-			"showdownId": "tinkaton"
-		},
-		{
-			"formId": "0964-000",
-			"name": "Palafin",
-			"showdownId": "palafin"
-		},
-		{
-			"formId": "0968-000",
-			"name": "Orthworm",
-			"showdownId": "orthworm"
-		},
-		{
-			"formId": "0970-000",
-			"name": "Glimmora",
-			"showdownId": "glimmora"
-		},
-		{
-			"formId": "0972-000",
-			"name": "Houndstone",
-			"showdownId": "houndstone"
-		},
-		{
-			"formId": "0979-000",
-			"name": "Annihilape",
-			"showdownId": "annihilape"
-		},
-		{
-			"formId": "0981-000",
-			"name": "Farigiraf",
-			"showdownId": "farigiraf"
-		},
-		{
-			"formId": "0983-000",
-			"name": "Kingambit",
-			"showdownId": "kingambit"
-		},
-		{
-			"formId": "1000-000",
-			"name": "Gholdengo",
-			"showdownId": "gholdengo"
-		},
-		{
-			"formId": "1013-000",
-			"name": "Sinistcha",
-			"showdownId": "sinistcha"
-		},
-		{
-			"formId": "1018-000",
-			"name": "Archaludon",
-			"showdownId": "archaludon"
-		},
-		{
-			"formId": "1019-000",
-			"name": "Hydrapple",
-			"showdownId": "hydrapple"
-		}
-	],
-	"megaEvolutions": [
-		{
-			"baseShowdownId": "abomasnow",
-			"megaName": "Mega Abomasnow",
-			"stone": "Abomasite"
-		},
-		{
-			"baseShowdownId": "absol",
-			"megaName": "Mega Absol",
-			"stone": "Absolite"
-		},
-		{
-			"baseShowdownId": "aerodactyl",
-			"megaName": "Mega Aerodactyl",
-			"stone": "Aerodactylite"
-		},
-		{
-			"baseShowdownId": "aggron",
-			"megaName": "Mega Aggron",
-			"stone": "Aggronite"
-		},
-		{
-			"baseShowdownId": "alakazam",
-			"megaName": "Mega Alakazam",
-			"stone": "Alakazite"
-		},
-		{
-			"baseShowdownId": "altaria",
-			"megaName": "Mega Altaria",
-			"stone": "Altarianite"
-		},
-		{
-			"baseShowdownId": "ampharos",
-			"megaName": "Mega Ampharos",
-			"stone": "Ampharosite"
-		},
-		{
-			"baseShowdownId": "audino",
-			"megaName": "Mega Audino",
-			"stone": "Audinite"
-		},
-		{
-			"baseShowdownId": "banette",
-			"megaName": "Mega Banette",
-			"stone": "Banettite"
-		},
-		{
-			"baseShowdownId": "barbaracle",
-			"megaName": "Mega Barbaracle",
-			"stone": "Barbaracite"
-		},
-		{
-			"baseShowdownId": "beedrill",
-			"megaName": "Mega Beedrill",
-			"stone": "Beedrillite"
-		},
-		{
-			"baseShowdownId": "blastoise",
-			"megaName": "Mega Blastoise",
-			"stone": "Blastoisinite"
-		},
-		{
-			"baseShowdownId": "blaziken",
-			"megaName": "Mega Blaziken",
-			"stone": "Blazikenite"
-		},
-		{
-			"baseShowdownId": "camerupt",
-			"megaName": "Mega Camerupt",
-			"stone": "Cameruptite"
-		},
-		{
-			"baseShowdownId": "chandelure",
-			"megaName": "Mega Chandelure",
-			"stone": "Chandelurite"
-		},
-		{
-			"baseShowdownId": "charizard",
-			"megaName": "Mega Charizard X",
-			"stone": "Charizardite X"
-		},
-		{
-			"baseShowdownId": "charizard",
-			"megaName": "Mega Charizard Y",
-			"stone": "Charizardite Y"
-		},
-		{
-			"baseShowdownId": "chesnaught",
-			"megaName": "Mega Chesnaught",
-			"stone": "Chesnaughtite"
-		},
-		{
-			"baseShowdownId": "chimecho",
-			"megaName": "Mega Chimecho",
-			"stone": "Chimechite"
-		},
-		{
-			"baseShowdownId": "clefable",
-			"megaName": "Mega Clefable",
-			"stone": "Clefablite"
-		},
-		{
-			"baseShowdownId": "crabominable",
-			"megaName": "Mega Crabominable",
-			"stone": "Crabominite"
-		},
-		{
-			"baseShowdownId": "delphox",
-			"megaName": "Mega Delphox",
-			"stone": "Delphoxite"
-		},
-		{
-			"baseShowdownId": "dragalge",
-			"megaName": "Mega Dragalge",
-			"stone": "Dragalgite"
-		},
-		{
-			"baseShowdownId": "dragonite",
-			"megaName": "Mega Dragonite",
-			"stone": "Dragoninite"
-		},
-		{
-			"baseShowdownId": "drampa",
-			"megaName": "Mega Drampa",
-			"stone": "Drampanite"
-		},
-		{
-			"baseShowdownId": "eelektross",
-			"megaName": "Mega Eelektross",
-			"stone": "Eelektrossite"
-		},
-		{
-			"baseShowdownId": "emboar",
-			"megaName": "Mega Emboar",
-			"stone": "Emboarite"
-		},
-		{
-			"baseShowdownId": "excadrill",
-			"megaName": "Mega Excadrill",
-			"stone": "Excadrite"
-		},
-		{
-			"baseShowdownId": "falinks",
-			"megaName": "Mega Falinks",
-			"stone": "Falinksite"
-		},
-		{
-			"baseShowdownId": "feraligatr",
-			"megaName": "Mega Feraligatr",
-			"stone": "Feraligite"
-		},
-		{
-			"baseShowdownId": "floette",
-			"megaName": "Mega Floette",
-			"stone": "Floettite"
-		},
-		{
-			"baseShowdownId": "froslass",
-			"megaName": "Mega Froslass",
-			"stone": "Froslassite"
-		},
-		{
-			"baseShowdownId": "gallade",
-			"megaName": "Mega Gallade",
-			"stone": "Galladite"
-		},
-		{
-			"baseShowdownId": "garchomp",
-			"megaName": "Mega Garchomp",
-			"stone": "Garchompite"
-		},
-		{
-			"baseShowdownId": "gardevoir",
-			"megaName": "Mega Gardevoir",
-			"stone": "Gardevoirite"
-		},
-		{
-			"baseShowdownId": "gengar",
-			"megaName": "Mega Gengar",
-			"stone": "Gengarite"
-		},
-		{
-			"baseShowdownId": "glalie",
-			"megaName": "Mega Glalie",
-			"stone": "Glalitite"
-		},
-		{
-			"baseShowdownId": "glimmora",
-			"megaName": "Mega Glimmora",
-			"stone": "Glimmoranite"
-		},
-		{
-			"baseShowdownId": "golurk",
-			"megaName": "Mega Golurk",
-			"stone": "Golurkite"
-		},
-		{
-			"baseShowdownId": "greninja",
-			"megaName": "Mega Greninja",
-			"stone": "Greninjite"
-		},
-		{
-			"baseShowdownId": "gyarados",
-			"megaName": "Mega Gyarados",
-			"stone": "Gyaradosite"
-		},
-		{
-			"baseShowdownId": "hawlucha",
-			"megaName": "Mega Hawlucha",
-			"stone": "Hawluchanite"
-		},
-		{
-			"baseShowdownId": "heracross",
-			"megaName": "Mega Heracross",
-			"stone": "Heracronite"
-		},
-		{
-			"baseShowdownId": "houndoom",
-			"megaName": "Mega Houndoom",
-			"stone": "Houndoominite"
-		},
-		{
-			"baseShowdownId": "kangaskhan",
-			"megaName": "Mega Kangaskhan",
-			"stone": "Kangaskhanite"
-		},
-		{
-			"baseShowdownId": "lopunny",
-			"megaName": "Mega Lopunny",
-			"stone": "Lopunnite"
-		},
-		{
-			"baseShowdownId": "lucario",
-			"megaName": "Mega Lucario",
-			"stone": "Lucarionite"
-		},
-		{
-			"baseShowdownId": "malamar",
-			"megaName": "Mega Malamar",
-			"stone": "Malamarite"
-		},
-		{
-			"baseShowdownId": "manectric",
-			"megaName": "Mega Manectric",
-			"stone": "Manectite"
-		},
-		{
-			"baseShowdownId": "mawile",
-			"megaName": "Mega Mawile",
-			"stone": "Mawilite"
-		},
-		{
-			"baseShowdownId": "medicham",
-			"megaName": "Mega Medicham",
-			"stone": "Medichamite"
-		},
-		{
-			"baseShowdownId": "meganium",
-			"megaName": "Mega Meganium",
-			"stone": "Meganiumite"
-		},
-		{
-			"baseShowdownId": "meowstic",
-			"megaName": "Mega Meowstic",
-			"stone": "Meowsticite"
-		},
-		{
-			"baseShowdownId": "meowsticf",
-			"megaName": "Mega Meowstic",
-			"stone": "Meowsticite"
-		},
-		{
-			"baseShowdownId": "metagross",
-			"megaName": "Mega Metagross",
-			"stone": "Metagrossite"
-		},
-		{
-			"baseShowdownId": "pidgeot",
-			"megaName": "Mega Pidgeot",
-			"stone": "Pidgeotite"
-		},
-		{
-			"baseShowdownId": "pinsir",
-			"megaName": "Mega Pinsir",
-			"stone": "Pinsirite"
-		},
-		{
-			"baseShowdownId": "pyroar",
-			"megaName": "Mega Pyroar",
-			"stone": "Pyroarite"
-		},
-		{
-			"baseShowdownId": "raichu",
-			"megaName": "Mega Raichu X",
-			"stone": "Raichunite X"
-		},
-		{
-			"baseShowdownId": "raichu",
-			"megaName": "Mega Raichu Y",
-			"stone": "Raichunite Y"
-		},
-		{
-			"baseShowdownId": "sableye",
-			"megaName": "Mega Sableye",
-			"stone": "Sablenite"
-		},
-		{
-			"baseShowdownId": "sceptile",
-			"megaName": "Mega Sceptile",
-			"stone": "Sceptilite"
-		},
-		{
-			"baseShowdownId": "scizor",
-			"megaName": "Mega Scizor",
-			"stone": "Scizorite"
-		},
-		{
-			"baseShowdownId": "scolipede",
-			"megaName": "Mega Scolipede",
-			"stone": "Scolipite"
-		},
-		{
-			"baseShowdownId": "scovillain",
-			"megaName": "Mega Scovillain",
-			"stone": "Scovillainite"
-		},
-		{
-			"baseShowdownId": "scrafty",
-			"megaName": "Mega Scrafty",
-			"stone": "Scraftinite"
-		},
-		{
-			"baseShowdownId": "sharpedo",
-			"megaName": "Mega Sharpedo",
-			"stone": "Sharpedonite"
-		},
-		{
-			"baseShowdownId": "skarmory",
-			"megaName": "Mega Skarmory",
-			"stone": "Skarmorite"
-		},
-		{
-			"baseShowdownId": "slowbro",
-			"megaName": "Mega Slowbro",
-			"stone": "Slowbronite"
-		},
-		{
-			"baseShowdownId": "staraptor",
-			"megaName": "Mega Staraptor",
-			"stone": "Staraptite"
-		},
-		{
-			"baseShowdownId": "starmie",
-			"megaName": "Mega Starmie",
-			"stone": "Starminite"
-		},
-		{
-			"baseShowdownId": "steelix",
-			"megaName": "Mega Steelix",
-			"stone": "Steelixite"
-		},
-		{
-			"baseShowdownId": "swampert",
-			"megaName": "Mega Swampert",
-			"stone": "Swampertite"
-		},
-		{
-			"baseShowdownId": "tyranitar",
-			"megaName": "Mega Tyranitar",
-			"stone": "Tyranitarite"
-		},
-		{
-			"baseShowdownId": "venusaur",
-			"megaName": "Mega Venusaur",
-			"stone": "Venusaurite"
-		},
-		{
-			"baseShowdownId": "victreebel",
-			"megaName": "Mega Victreebel",
-			"stone": "Victreebelite"
-		}
-	]
+  "schemaVersion": 1,
+  "id": "M-B",
+  "title": "Regulation Set M-B",
+  "startsAt": "2026-06-17T02:00:00.000Z",
+  "endsAt": "2026-09-09T01:59:00.000Z",
+  "verifiedAt": "2026-08-29T11:31:47.851Z",
+  "sources": {
+    "notice": "https://champions-news.pokemon-home.com/en/page/776.html",
+    "eligiblePokemon": "https://web-view.app.pokemonchampions.jp/battle/pages/events/rs178066986988lmoqpm/en/pokemon.html"
+  },
+  "sourceHashes": {
+    "notice": "f66f7c310bb3c722e26d4bdb1d417f9f3a18ec740731e030cc302de4797cb082",
+    "eligiblePokemon": "8b0c6db8dcd403bb1f5453c1c6f9ac35c80192762219a308c80023375a93d617"
+  },
+  "formats": {
+    "Singles": {
+      "minimumTeamSize": 3,
+      "maximumTeamSize": 6,
+      "bringSize": 3
+    },
+    "Doubles": {
+      "minimumTeamSize": 4,
+      "maximumTeamSize": 6,
+      "bringSize": 4
+    }
+  },
+  "rules": {
+    "speciesClause": true,
+    "itemClause": true,
+    "maximumMegaEvolutions": 1,
+    "maximumStatPointsPerStat": 32,
+    "maximumTotalStatPoints": 66
+  },
+  "eligiblePokemon": [
+    {
+      "formId": "0003-000",
+      "name": "Venusaur",
+      "showdownId": "venusaur"
+    },
+    {
+      "formId": "0006-000",
+      "name": "Charizard",
+      "showdownId": "charizard"
+    },
+    {
+      "formId": "0009-000",
+      "name": "Blastoise",
+      "showdownId": "blastoise"
+    },
+    {
+      "formId": "0015-000",
+      "name": "Beedrill",
+      "showdownId": "beedrill"
+    },
+    {
+      "formId": "0018-000",
+      "name": "Pidgeot",
+      "showdownId": "pidgeot"
+    },
+    {
+      "formId": "0024-000",
+      "name": "Arbok",
+      "showdownId": "arbok"
+    },
+    {
+      "formId": "0025-000",
+      "name": "Pikachu",
+      "showdownId": "pikachu"
+    },
+    {
+      "formId": "0026-000",
+      "name": "Raichu",
+      "showdownId": "raichu"
+    },
+    {
+      "formId": "0026-001",
+      "name": "Raichu (Alolan Form)",
+      "showdownId": "raichualola"
+    },
+    {
+      "formId": "0036-000",
+      "name": "Clefable",
+      "showdownId": "clefable"
+    },
+    {
+      "formId": "0038-000",
+      "name": "Ninetales",
+      "showdownId": "ninetales"
+    },
+    {
+      "formId": "0038-001",
+      "name": "Ninetales (Alolan Form)",
+      "showdownId": "ninetalesalola"
+    },
+    {
+      "formId": "0045-000",
+      "name": "Vileplume",
+      "showdownId": "vileplume"
+    },
+    {
+      "formId": "0059-000",
+      "name": "Arcanine",
+      "showdownId": "arcanine"
+    },
+    {
+      "formId": "0059-001",
+      "name": "Arcanine (Hisuian Form)",
+      "showdownId": "arcaninehisui"
+    },
+    {
+      "formId": "0065-000",
+      "name": "Alakazam",
+      "showdownId": "alakazam"
+    },
+    {
+      "formId": "0068-000",
+      "name": "Machamp",
+      "showdownId": "machamp"
+    },
+    {
+      "formId": "0071-000",
+      "name": "Victreebel",
+      "showdownId": "victreebel"
+    },
+    {
+      "formId": "0080-000",
+      "name": "Slowbro",
+      "showdownId": "slowbro"
+    },
+    {
+      "formId": "0080-002",
+      "name": "Slowbro (Galarian Form)",
+      "showdownId": "slowbrogalar"
+    },
+    {
+      "formId": "0094-000",
+      "name": "Gengar",
+      "showdownId": "gengar"
+    },
+    {
+      "formId": "0115-000",
+      "name": "Kangaskhan",
+      "showdownId": "kangaskhan"
+    },
+    {
+      "formId": "0121-000",
+      "name": "Starmie",
+      "showdownId": "starmie"
+    },
+    {
+      "formId": "0127-000",
+      "name": "Pinsir",
+      "showdownId": "pinsir"
+    },
+    {
+      "formId": "0128-000",
+      "name": "Tauros",
+      "showdownId": "tauros"
+    },
+    {
+      "formId": "0128-001",
+      "name": "Tauros (Paldean Form (Combat Breed))",
+      "showdownId": "taurospaldeacombat"
+    },
+    {
+      "formId": "0128-002",
+      "name": "Tauros (Paldean Form (Blaze Breed))",
+      "showdownId": "taurospaldeablaze"
+    },
+    {
+      "formId": "0128-003",
+      "name": "Tauros (Paldean Form (Aqua Breed))",
+      "showdownId": "taurospaldeaaqua"
+    },
+    {
+      "formId": "0130-000",
+      "name": "Gyarados",
+      "showdownId": "gyarados"
+    },
+    {
+      "formId": "0132-000",
+      "name": "Ditto",
+      "showdownId": "ditto"
+    },
+    {
+      "formId": "0134-000",
+      "name": "Vaporeon",
+      "showdownId": "vaporeon"
+    },
+    {
+      "formId": "0135-000",
+      "name": "Jolteon",
+      "showdownId": "jolteon"
+    },
+    {
+      "formId": "0136-000",
+      "name": "Flareon",
+      "showdownId": "flareon"
+    },
+    {
+      "formId": "0142-000",
+      "name": "Aerodactyl",
+      "showdownId": "aerodactyl"
+    },
+    {
+      "formId": "0143-000",
+      "name": "Snorlax",
+      "showdownId": "snorlax"
+    },
+    {
+      "formId": "0149-000",
+      "name": "Dragonite",
+      "showdownId": "dragonite"
+    },
+    {
+      "formId": "0154-000",
+      "name": "Meganium",
+      "showdownId": "meganium"
+    },
+    {
+      "formId": "0157-000",
+      "name": "Typhlosion",
+      "showdownId": "typhlosion"
+    },
+    {
+      "formId": "0157-001",
+      "name": "Typhlosion (Hisuian Form)",
+      "showdownId": "typhlosionhisui"
+    },
+    {
+      "formId": "0160-000",
+      "name": "Feraligatr",
+      "showdownId": "feraligatr"
+    },
+    {
+      "formId": "0168-000",
+      "name": "Ariados",
+      "showdownId": "ariados"
+    },
+    {
+      "formId": "0181-000",
+      "name": "Ampharos",
+      "showdownId": "ampharos"
+    },
+    {
+      "formId": "0184-000",
+      "name": "Azumarill",
+      "showdownId": "azumarill"
+    },
+    {
+      "formId": "0186-000",
+      "name": "Politoed",
+      "showdownId": "politoed"
+    },
+    {
+      "formId": "0196-000",
+      "name": "Espeon",
+      "showdownId": "espeon"
+    },
+    {
+      "formId": "0197-000",
+      "name": "Umbreon",
+      "showdownId": "umbreon"
+    },
+    {
+      "formId": "0199-000",
+      "name": "Slowking",
+      "showdownId": "slowking"
+    },
+    {
+      "formId": "0199-001",
+      "name": "Slowking (Galarian Form)",
+      "showdownId": "slowkinggalar"
+    },
+    {
+      "formId": "0205-000",
+      "name": "Forretress",
+      "showdownId": "forretress"
+    },
+    {
+      "formId": "0208-000",
+      "name": "Steelix",
+      "showdownId": "steelix"
+    },
+    {
+      "formId": "0211-000",
+      "name": "Qwilfish",
+      "showdownId": "qwilfish"
+    },
+    {
+      "formId": "0212-000",
+      "name": "Scizor",
+      "showdownId": "scizor"
+    },
+    {
+      "formId": "0214-000",
+      "name": "Heracross",
+      "showdownId": "heracross"
+    },
+    {
+      "formId": "0227-000",
+      "name": "Skarmory",
+      "showdownId": "skarmory"
+    },
+    {
+      "formId": "0229-000",
+      "name": "Houndoom",
+      "showdownId": "houndoom"
+    },
+    {
+      "formId": "0248-000",
+      "name": "Tyranitar",
+      "showdownId": "tyranitar"
+    },
+    {
+      "formId": "0254-000",
+      "name": "Sceptile",
+      "showdownId": "sceptile"
+    },
+    {
+      "formId": "0257-000",
+      "name": "Blaziken",
+      "showdownId": "blaziken"
+    },
+    {
+      "formId": "0260-000",
+      "name": "Swampert",
+      "showdownId": "swampert"
+    },
+    {
+      "formId": "0279-000",
+      "name": "Pelipper",
+      "showdownId": "pelipper"
+    },
+    {
+      "formId": "0282-000",
+      "name": "Gardevoir",
+      "showdownId": "gardevoir"
+    },
+    {
+      "formId": "0302-000",
+      "name": "Sableye",
+      "showdownId": "sableye"
+    },
+    {
+      "formId": "0303-000",
+      "name": "Mawile",
+      "showdownId": "mawile"
+    },
+    {
+      "formId": "0306-000",
+      "name": "Aggron",
+      "showdownId": "aggron"
+    },
+    {
+      "formId": "0308-000",
+      "name": "Medicham",
+      "showdownId": "medicham"
+    },
+    {
+      "formId": "0310-000",
+      "name": "Manectric",
+      "showdownId": "manectric"
+    },
+    {
+      "formId": "0319-000",
+      "name": "Sharpedo",
+      "showdownId": "sharpedo"
+    },
+    {
+      "formId": "0323-000",
+      "name": "Camerupt",
+      "showdownId": "camerupt"
+    },
+    {
+      "formId": "0324-000",
+      "name": "Torkoal",
+      "showdownId": "torkoal"
+    },
+    {
+      "formId": "0334-000",
+      "name": "Altaria",
+      "showdownId": "altaria"
+    },
+    {
+      "formId": "0350-000",
+      "name": "Milotic",
+      "showdownId": "milotic"
+    },
+    {
+      "formId": "0351-000",
+      "name": "Castform",
+      "showdownId": "castform"
+    },
+    {
+      "formId": "0354-000",
+      "name": "Banette",
+      "showdownId": "banette"
+    },
+    {
+      "formId": "0358-000",
+      "name": "Chimecho",
+      "showdownId": "chimecho"
+    },
+    {
+      "formId": "0359-000",
+      "name": "Absol",
+      "showdownId": "absol"
+    },
+    {
+      "formId": "0362-000",
+      "name": "Glalie",
+      "showdownId": "glalie"
+    },
+    {
+      "formId": "0376-000",
+      "name": "Metagross",
+      "showdownId": "metagross"
+    },
+    {
+      "formId": "0389-000",
+      "name": "Torterra",
+      "showdownId": "torterra"
+    },
+    {
+      "formId": "0392-000",
+      "name": "Infernape",
+      "showdownId": "infernape"
+    },
+    {
+      "formId": "0395-000",
+      "name": "Empoleon",
+      "showdownId": "empoleon"
+    },
+    {
+      "formId": "0398-000",
+      "name": "Staraptor",
+      "showdownId": "staraptor"
+    },
+    {
+      "formId": "0405-000",
+      "name": "Luxray",
+      "showdownId": "luxray"
+    },
+    {
+      "formId": "0407-000",
+      "name": "Roserade",
+      "showdownId": "roserade"
+    },
+    {
+      "formId": "0409-000",
+      "name": "Rampardos",
+      "showdownId": "rampardos"
+    },
+    {
+      "formId": "0411-000",
+      "name": "Bastiodon",
+      "showdownId": "bastiodon"
+    },
+    {
+      "formId": "0428-000",
+      "name": "Lopunny",
+      "showdownId": "lopunny"
+    },
+    {
+      "formId": "0442-000",
+      "name": "Spiritomb",
+      "showdownId": "spiritomb"
+    },
+    {
+      "formId": "0445-000",
+      "name": "Garchomp",
+      "showdownId": "garchomp"
+    },
+    {
+      "formId": "0448-000",
+      "name": "Lucario",
+      "showdownId": "lucario"
+    },
+    {
+      "formId": "0450-000",
+      "name": "Hippowdon",
+      "showdownId": "hippowdon"
+    },
+    {
+      "formId": "0454-000",
+      "name": "Toxicroak",
+      "showdownId": "toxicroak"
+    },
+    {
+      "formId": "0460-000",
+      "name": "Abomasnow",
+      "showdownId": "abomasnow"
+    },
+    {
+      "formId": "0461-000",
+      "name": "Weavile",
+      "showdownId": "weavile"
+    },
+    {
+      "formId": "0464-000",
+      "name": "Rhyperior",
+      "showdownId": "rhyperior"
+    },
+    {
+      "formId": "0470-000",
+      "name": "Leafeon",
+      "showdownId": "leafeon"
+    },
+    {
+      "formId": "0471-000",
+      "name": "Glaceon",
+      "showdownId": "glaceon"
+    },
+    {
+      "formId": "0472-000",
+      "name": "Gliscor",
+      "showdownId": "gliscor"
+    },
+    {
+      "formId": "0473-000",
+      "name": "Mamoswine",
+      "showdownId": "mamoswine"
+    },
+    {
+      "formId": "0475-000",
+      "name": "Gallade",
+      "showdownId": "gallade"
+    },
+    {
+      "formId": "0478-000",
+      "name": "Froslass",
+      "showdownId": "froslass"
+    },
+    {
+      "formId": "0479-000",
+      "name": "Rotom (Rotom)",
+      "showdownId": "rotom"
+    },
+    {
+      "formId": "0479-001",
+      "name": "Rotom (Heat Rotom)",
+      "showdownId": "rotomheat"
+    },
+    {
+      "formId": "0479-002",
+      "name": "Rotom (Wash Rotom)",
+      "showdownId": "rotomwash"
+    },
+    {
+      "formId": "0479-003",
+      "name": "Rotom (Frost Rotom)",
+      "showdownId": "rotomfrost"
+    },
+    {
+      "formId": "0479-004",
+      "name": "Rotom (Fan Rotom)",
+      "showdownId": "rotomfan"
+    },
+    {
+      "formId": "0479-005",
+      "name": "Rotom (Mow Rotom)",
+      "showdownId": "rotommow"
+    },
+    {
+      "formId": "0497-000",
+      "name": "Serperior",
+      "showdownId": "serperior"
+    },
+    {
+      "formId": "0500-000",
+      "name": "Emboar",
+      "showdownId": "emboar"
+    },
+    {
+      "formId": "0503-000",
+      "name": "Samurott",
+      "showdownId": "samurott"
+    },
+    {
+      "formId": "0503-001",
+      "name": "Samurott (Hisuian Form)",
+      "showdownId": "samurotthisui"
+    },
+    {
+      "formId": "0505-000",
+      "name": "Watchog",
+      "showdownId": "watchog"
+    },
+    {
+      "formId": "0510-000",
+      "name": "Liepard",
+      "showdownId": "liepard"
+    },
+    {
+      "formId": "0512-000",
+      "name": "Simisage",
+      "showdownId": "simisage"
+    },
+    {
+      "formId": "0514-000",
+      "name": "Simisear",
+      "showdownId": "simisear"
+    },
+    {
+      "formId": "0516-000",
+      "name": "Simipour",
+      "showdownId": "simipour"
+    },
+    {
+      "formId": "0518-000",
+      "name": "Musharna",
+      "showdownId": "musharna"
+    },
+    {
+      "formId": "0530-000",
+      "name": "Excadrill",
+      "showdownId": "excadrill"
+    },
+    {
+      "formId": "0531-000",
+      "name": "Audino",
+      "showdownId": "audino"
+    },
+    {
+      "formId": "0534-000",
+      "name": "Conkeldurr",
+      "showdownId": "conkeldurr"
+    },
+    {
+      "formId": "0545-000",
+      "name": "Scolipede",
+      "showdownId": "scolipede"
+    },
+    {
+      "formId": "0547-000",
+      "name": "Whimsicott",
+      "showdownId": "whimsicott"
+    },
+    {
+      "formId": "0553-000",
+      "name": "Krookodile",
+      "showdownId": "krookodile"
+    },
+    {
+      "formId": "0560-000",
+      "name": "Scrafty",
+      "showdownId": "scrafty"
+    },
+    {
+      "formId": "0563-000",
+      "name": "Cofagrigus",
+      "showdownId": "cofagrigus"
+    },
+    {
+      "formId": "0569-000",
+      "name": "Garbodor",
+      "showdownId": "garbodor"
+    },
+    {
+      "formId": "0571-000",
+      "name": "Zoroark",
+      "showdownId": "zoroark"
+    },
+    {
+      "formId": "0571-001",
+      "name": "Zoroark (Hisuian Form)",
+      "showdownId": "zoroarkhisui"
+    },
+    {
+      "formId": "0579-000",
+      "name": "Reuniclus",
+      "showdownId": "reuniclus"
+    },
+    {
+      "formId": "0584-000",
+      "name": "Vanilluxe",
+      "showdownId": "vanilluxe"
+    },
+    {
+      "formId": "0587-000",
+      "name": "Emolga",
+      "showdownId": "emolga"
+    },
+    {
+      "formId": "0604-000",
+      "name": "Eelektross",
+      "showdownId": "eelektross"
+    },
+    {
+      "formId": "0609-000",
+      "name": "Chandelure",
+      "showdownId": "chandelure"
+    },
+    {
+      "formId": "0614-000",
+      "name": "Beartic",
+      "showdownId": "beartic"
+    },
+    {
+      "formId": "0618-000",
+      "name": "Stunfisk",
+      "showdownId": "stunfisk"
+    },
+    {
+      "formId": "0618-001",
+      "name": "Stunfisk (Galarian Form)",
+      "showdownId": "stunfiskgalar"
+    },
+    {
+      "formId": "0623-000",
+      "name": "Golurk",
+      "showdownId": "golurk"
+    },
+    {
+      "formId": "0635-000",
+      "name": "Hydreigon",
+      "showdownId": "hydreigon"
+    },
+    {
+      "formId": "0637-000",
+      "name": "Volcarona",
+      "showdownId": "volcarona"
+    },
+    {
+      "formId": "0652-000",
+      "name": "Chesnaught",
+      "showdownId": "chesnaught"
+    },
+    {
+      "formId": "0655-000",
+      "name": "Delphox",
+      "showdownId": "delphox"
+    },
+    {
+      "formId": "0658-000",
+      "name": "Greninja",
+      "showdownId": "greninja"
+    },
+    {
+      "formId": "0660-000",
+      "name": "Diggersby",
+      "showdownId": "diggersby"
+    },
+    {
+      "formId": "0663-000",
+      "name": "Talonflame",
+      "showdownId": "talonflame"
+    },
+    {
+      "formId": "0666-018",
+      "name": "Vivillon",
+      "showdownId": "vivillonfancy"
+    },
+    {
+      "formId": "0668-000",
+      "name": "Pyroar",
+      "showdownId": "pyroar"
+    },
+    {
+      "formId": "0670-005",
+      "name": "Floette",
+      "showdownId": "floette"
+    },
+    {
+      "formId": "0671-000",
+      "name": "Florges",
+      "showdownId": "florges"
+    },
+    {
+      "formId": "0675-000",
+      "name": "Pangoro",
+      "showdownId": "pangoro"
+    },
+    {
+      "formId": "0676-000",
+      "name": "Furfrou",
+      "showdownId": "furfrou"
+    },
+    {
+      "formId": "0678-000",
+      "name": "Meowstic (Male)",
+      "showdownId": "meowsticf"
+    },
+    {
+      "formId": "0678-001",
+      "name": "Meowstic (Female)",
+      "showdownId": "meowstic"
+    },
+    {
+      "formId": "0681-000",
+      "name": "Aegislash",
+      "showdownId": "aegislash"
+    },
+    {
+      "formId": "0683-000",
+      "name": "Aromatisse",
+      "showdownId": "aromatisse"
+    },
+    {
+      "formId": "0685-000",
+      "name": "Slurpuff",
+      "showdownId": "slurpuff"
+    },
+    {
+      "formId": "0687-000",
+      "name": "Malamar",
+      "showdownId": "malamar"
+    },
+    {
+      "formId": "0689-000",
+      "name": "Barbaracle",
+      "showdownId": "barbaracle"
+    },
+    {
+      "formId": "0691-000",
+      "name": "Dragalge",
+      "showdownId": "dragalge"
+    },
+    {
+      "formId": "0693-000",
+      "name": "Clawitzer",
+      "showdownId": "clawitzer"
+    },
+    {
+      "formId": "0695-000",
+      "name": "Heliolisk",
+      "showdownId": "heliolisk"
+    },
+    {
+      "formId": "0697-000",
+      "name": "Tyrantrum",
+      "showdownId": "tyrantrum"
+    },
+    {
+      "formId": "0699-000",
+      "name": "Aurorus",
+      "showdownId": "aurorus"
+    },
+    {
+      "formId": "0700-000",
+      "name": "Sylveon",
+      "showdownId": "sylveon"
+    },
+    {
+      "formId": "0701-000",
+      "name": "Hawlucha",
+      "showdownId": "hawlucha"
+    },
+    {
+      "formId": "0702-000",
+      "name": "Dedenne",
+      "showdownId": "dedenne"
+    },
+    {
+      "formId": "0706-000",
+      "name": "Goodra",
+      "showdownId": "goodra"
+    },
+    {
+      "formId": "0706-001",
+      "name": "Goodra (Hisuian Form)",
+      "showdownId": "goodrahisui"
+    },
+    {
+      "formId": "0707-000",
+      "name": "Klefki",
+      "showdownId": "klefki"
+    },
+    {
+      "formId": "0709-000",
+      "name": "Trevenant",
+      "showdownId": "trevenant"
+    },
+    {
+      "formId": "0711-000",
+      "name": "Gourgeist (Medium Variety)",
+      "showdownId": "gourgeist"
+    },
+    {
+      "formId": "0711-001",
+      "name": "Gourgeist (Small Variety)",
+      "showdownId": "gourgeistsmall"
+    },
+    {
+      "formId": "0711-002",
+      "name": "Gourgeist (Large Variety)",
+      "showdownId": "gourgeistlarge"
+    },
+    {
+      "formId": "0711-003",
+      "name": "Gourgeist (Jumbo Variety)",
+      "showdownId": "gourgeistsuper"
+    },
+    {
+      "formId": "0713-000",
+      "name": "Avalugg",
+      "showdownId": "avalugg"
+    },
+    {
+      "formId": "0713-001",
+      "name": "Avalugg (Hisuian Form)",
+      "showdownId": "avalugghisui"
+    },
+    {
+      "formId": "0715-000",
+      "name": "Noivern",
+      "showdownId": "noivern"
+    },
+    {
+      "formId": "0724-000",
+      "name": "Decidueye",
+      "showdownId": "decidueye"
+    },
+    {
+      "formId": "0724-001",
+      "name": "Decidueye (Hisuian Form)",
+      "showdownId": "decidueyehisui"
+    },
+    {
+      "formId": "0727-000",
+      "name": "Incineroar",
+      "showdownId": "incineroar"
+    },
+    {
+      "formId": "0730-000",
+      "name": "Primarina",
+      "showdownId": "primarina"
+    },
+    {
+      "formId": "0733-000",
+      "name": "Toucannon",
+      "showdownId": "toucannon"
+    },
+    {
+      "formId": "0740-000",
+      "name": "Crabominable",
+      "showdownId": "crabominable"
+    },
+    {
+      "formId": "0745-000",
+      "name": "Lycanroc (Midday Form)",
+      "showdownId": "lycanroc"
+    },
+    {
+      "formId": "0745-001",
+      "name": "Lycanroc (Midnight Form)",
+      "showdownId": "lycanrocmidnight"
+    },
+    {
+      "formId": "0745-002",
+      "name": "Lycanroc (Dusk Form)",
+      "showdownId": "lycanrocdusk"
+    },
+    {
+      "formId": "0748-000",
+      "name": "Toxapex",
+      "showdownId": "toxapex"
+    },
+    {
+      "formId": "0750-000",
+      "name": "Mudsdale",
+      "showdownId": "mudsdale"
+    },
+    {
+      "formId": "0752-000",
+      "name": "Araquanid",
+      "showdownId": "araquanid"
+    },
+    {
+      "formId": "0758-000",
+      "name": "Salazzle",
+      "showdownId": "salazzle"
+    },
+    {
+      "formId": "0763-000",
+      "name": "Tsareena",
+      "showdownId": "tsareena"
+    },
+    {
+      "formId": "0765-000",
+      "name": "Oranguru",
+      "showdownId": "oranguru"
+    },
+    {
+      "formId": "0766-000",
+      "name": "Passimian",
+      "showdownId": "passimian"
+    },
+    {
+      "formId": "0778-000",
+      "name": "Mimikyu",
+      "showdownId": "mimikyu"
+    },
+    {
+      "formId": "0780-000",
+      "name": "Drampa",
+      "showdownId": "drampa"
+    },
+    {
+      "formId": "0784-000",
+      "name": "Kommo-o",
+      "showdownId": "kommoo"
+    },
+    {
+      "formId": "0823-000",
+      "name": "Corviknight",
+      "showdownId": "corviknight"
+    },
+    {
+      "formId": "0841-000",
+      "name": "Flapple",
+      "showdownId": "flapple"
+    },
+    {
+      "formId": "0842-000",
+      "name": "Appletun",
+      "showdownId": "appletun"
+    },
+    {
+      "formId": "0844-000",
+      "name": "Sandaconda",
+      "showdownId": "sandaconda"
+    },
+    {
+      "formId": "0855-000",
+      "name": "Polteageist",
+      "showdownId": "polteageist"
+    },
+    {
+      "formId": "0858-000",
+      "name": "Hatterene",
+      "showdownId": "hatterene"
+    },
+    {
+      "formId": "0861-000",
+      "name": "Grimmsnarl",
+      "showdownId": "grimmsnarl"
+    },
+    {
+      "formId": "0866-000",
+      "name": "Mr. Rime",
+      "showdownId": "mrrime"
+    },
+    {
+      "formId": "0867-000",
+      "name": "Runerigus",
+      "showdownId": "runerigus"
+    },
+    {
+      "formId": "0869-000",
+      "name": "Alcremie",
+      "showdownId": "alcremie"
+    },
+    {
+      "formId": "0870-000",
+      "name": "Falinks",
+      "showdownId": "falinks"
+    },
+    {
+      "formId": "0877-000",
+      "name": "Morpeko",
+      "showdownId": "morpeko"
+    },
+    {
+      "formId": "0887-000",
+      "name": "Dragapult",
+      "showdownId": "dragapult"
+    },
+    {
+      "formId": "0899-000",
+      "name": "Wyrdeer",
+      "showdownId": "wyrdeer"
+    },
+    {
+      "formId": "0900-000",
+      "name": "Kleavor",
+      "showdownId": "kleavor"
+    },
+    {
+      "formId": "0902-000",
+      "name": "Basculegion (Male)",
+      "showdownId": "basculegion"
+    },
+    {
+      "formId": "0902-001",
+      "name": "Basculegion (Female)",
+      "showdownId": "basculegionf"
+    },
+    {
+      "formId": "0903-000",
+      "name": "Sneasler",
+      "showdownId": "sneasler"
+    },
+    {
+      "formId": "0904-000",
+      "name": "Overqwil",
+      "showdownId": "overqwil"
+    },
+    {
+      "formId": "0908-000",
+      "name": "Meowscarada",
+      "showdownId": "meowscarada"
+    },
+    {
+      "formId": "0911-000",
+      "name": "Skeledirge",
+      "showdownId": "skeledirge"
+    },
+    {
+      "formId": "0914-000",
+      "name": "Quaquaval",
+      "showdownId": "quaquaval"
+    },
+    {
+      "formId": "0925-000",
+      "name": "Maushold",
+      "showdownId": "mausholdfour"
+    },
+    {
+      "formId": "0934-000",
+      "name": "Garganacl",
+      "showdownId": "garganacl"
+    },
+    {
+      "formId": "0936-000",
+      "name": "Armarouge",
+      "showdownId": "armarouge"
+    },
+    {
+      "formId": "0937-000",
+      "name": "Ceruledge",
+      "showdownId": "ceruledge"
+    },
+    {
+      "formId": "0939-000",
+      "name": "Bellibolt",
+      "showdownId": "bellibolt"
+    },
+    {
+      "formId": "0952-000",
+      "name": "Scovillain",
+      "showdownId": "scovillain"
+    },
+    {
+      "formId": "0956-000",
+      "name": "Espathra",
+      "showdownId": "espathra"
+    },
+    {
+      "formId": "0959-000",
+      "name": "Tinkaton",
+      "showdownId": "tinkaton"
+    },
+    {
+      "formId": "0964-000",
+      "name": "Palafin",
+      "showdownId": "palafin"
+    },
+    {
+      "formId": "0968-000",
+      "name": "Orthworm",
+      "showdownId": "orthworm"
+    },
+    {
+      "formId": "0970-000",
+      "name": "Glimmora",
+      "showdownId": "glimmora"
+    },
+    {
+      "formId": "0972-000",
+      "name": "Houndstone",
+      "showdownId": "houndstone"
+    },
+    {
+      "formId": "0979-000",
+      "name": "Annihilape",
+      "showdownId": "annihilape"
+    },
+    {
+      "formId": "0981-000",
+      "name": "Farigiraf",
+      "showdownId": "farigiraf"
+    },
+    {
+      "formId": "0983-000",
+      "name": "Kingambit",
+      "showdownId": "kingambit"
+    },
+    {
+      "formId": "1000-000",
+      "name": "Gholdengo",
+      "showdownId": "gholdengo"
+    },
+    {
+      "formId": "1013-000",
+      "name": "Sinistcha",
+      "showdownId": "sinistcha"
+    },
+    {
+      "formId": "1018-000",
+      "name": "Archaludon",
+      "showdownId": "archaludon"
+    },
+    {
+      "formId": "1019-000",
+      "name": "Hydrapple",
+      "showdownId": "hydrapple"
+    }
+  ],
+  "megaEvolutions": [
+    {
+      "baseShowdownId": "abomasnow",
+      "megaName": "Mega Abomasnow",
+      "stone": "Abomasite"
+    },
+    {
+      "baseShowdownId": "absol",
+      "megaName": "Mega Absol",
+      "stone": "Absolite"
+    },
+    {
+      "baseShowdownId": "aerodactyl",
+      "megaName": "Mega Aerodactyl",
+      "stone": "Aerodactylite"
+    },
+    {
+      "baseShowdownId": "aggron",
+      "megaName": "Mega Aggron",
+      "stone": "Aggronite"
+    },
+    {
+      "baseShowdownId": "alakazam",
+      "megaName": "Mega Alakazam",
+      "stone": "Alakazite"
+    },
+    {
+      "baseShowdownId": "altaria",
+      "megaName": "Mega Altaria",
+      "stone": "Altarianite"
+    },
+    {
+      "baseShowdownId": "ampharos",
+      "megaName": "Mega Ampharos",
+      "stone": "Ampharosite"
+    },
+    {
+      "baseShowdownId": "audino",
+      "megaName": "Mega Audino",
+      "stone": "Audinite"
+    },
+    {
+      "baseShowdownId": "banette",
+      "megaName": "Mega Banette",
+      "stone": "Banettite"
+    },
+    {
+      "baseShowdownId": "barbaracle",
+      "megaName": "Mega Barbaracle",
+      "stone": "Barbaracite"
+    },
+    {
+      "baseShowdownId": "beedrill",
+      "megaName": "Mega Beedrill",
+      "stone": "Beedrillite"
+    },
+    {
+      "baseShowdownId": "blastoise",
+      "megaName": "Mega Blastoise",
+      "stone": "Blastoisinite"
+    },
+    {
+      "baseShowdownId": "blaziken",
+      "megaName": "Mega Blaziken",
+      "stone": "Blazikenite"
+    },
+    {
+      "baseShowdownId": "camerupt",
+      "megaName": "Mega Camerupt",
+      "stone": "Cameruptite"
+    },
+    {
+      "baseShowdownId": "chandelure",
+      "megaName": "Mega Chandelure",
+      "stone": "Chandelurite"
+    },
+    {
+      "baseShowdownId": "charizard",
+      "megaName": "Mega Charizard X",
+      "stone": "Charizardite X"
+    },
+    {
+      "baseShowdownId": "charizard",
+      "megaName": "Mega Charizard Y",
+      "stone": "Charizardite Y"
+    },
+    {
+      "baseShowdownId": "chesnaught",
+      "megaName": "Mega Chesnaught",
+      "stone": "Chesnaughtite"
+    },
+    {
+      "baseShowdownId": "chimecho",
+      "megaName": "Mega Chimecho",
+      "stone": "Chimechite"
+    },
+    {
+      "baseShowdownId": "clefable",
+      "megaName": "Mega Clefable",
+      "stone": "Clefablite"
+    },
+    {
+      "baseShowdownId": "crabominable",
+      "megaName": "Mega Crabominable",
+      "stone": "Crabominite"
+    },
+    {
+      "baseShowdownId": "delphox",
+      "megaName": "Mega Delphox",
+      "stone": "Delphoxite"
+    },
+    {
+      "baseShowdownId": "dragalge",
+      "megaName": "Mega Dragalge",
+      "stone": "Dragalgite"
+    },
+    {
+      "baseShowdownId": "dragonite",
+      "megaName": "Mega Dragonite",
+      "stone": "Dragoninite"
+    },
+    {
+      "baseShowdownId": "drampa",
+      "megaName": "Mega Drampa",
+      "stone": "Drampanite"
+    },
+    {
+      "baseShowdownId": "eelektross",
+      "megaName": "Mega Eelektross",
+      "stone": "Eelektrossite"
+    },
+    {
+      "baseShowdownId": "emboar",
+      "megaName": "Mega Emboar",
+      "stone": "Emboarite"
+    },
+    {
+      "baseShowdownId": "excadrill",
+      "megaName": "Mega Excadrill",
+      "stone": "Excadrite"
+    },
+    {
+      "baseShowdownId": "falinks",
+      "megaName": "Mega Falinks",
+      "stone": "Falinksite"
+    },
+    {
+      "baseShowdownId": "feraligatr",
+      "megaName": "Mega Feraligatr",
+      "stone": "Feraligite"
+    },
+    {
+      "baseShowdownId": "floette",
+      "megaName": "Mega Floette",
+      "stone": "Floettite"
+    },
+    {
+      "baseShowdownId": "froslass",
+      "megaName": "Mega Froslass",
+      "stone": "Froslassite"
+    },
+    {
+      "baseShowdownId": "gallade",
+      "megaName": "Mega Gallade",
+      "stone": "Galladite"
+    },
+    {
+      "baseShowdownId": "garchomp",
+      "megaName": "Mega Garchomp",
+      "stone": "Garchompite"
+    },
+    {
+      "baseShowdownId": "gardevoir",
+      "megaName": "Mega Gardevoir",
+      "stone": "Gardevoirite"
+    },
+    {
+      "baseShowdownId": "gengar",
+      "megaName": "Mega Gengar",
+      "stone": "Gengarite"
+    },
+    {
+      "baseShowdownId": "glalie",
+      "megaName": "Mega Glalie",
+      "stone": "Glalitite"
+    },
+    {
+      "baseShowdownId": "glimmora",
+      "megaName": "Mega Glimmora",
+      "stone": "Glimmoranite"
+    },
+    {
+      "baseShowdownId": "golurk",
+      "megaName": "Mega Golurk",
+      "stone": "Golurkite"
+    },
+    {
+      "baseShowdownId": "greninja",
+      "megaName": "Mega Greninja",
+      "stone": "Greninjite"
+    },
+    {
+      "baseShowdownId": "gyarados",
+      "megaName": "Mega Gyarados",
+      "stone": "Gyaradosite"
+    },
+    {
+      "baseShowdownId": "hawlucha",
+      "megaName": "Mega Hawlucha",
+      "stone": "Hawluchanite"
+    },
+    {
+      "baseShowdownId": "heracross",
+      "megaName": "Mega Heracross",
+      "stone": "Heracronite"
+    },
+    {
+      "baseShowdownId": "houndoom",
+      "megaName": "Mega Houndoom",
+      "stone": "Houndoominite"
+    },
+    {
+      "baseShowdownId": "kangaskhan",
+      "megaName": "Mega Kangaskhan",
+      "stone": "Kangaskhanite"
+    },
+    {
+      "baseShowdownId": "lopunny",
+      "megaName": "Mega Lopunny",
+      "stone": "Lopunnite"
+    },
+    {
+      "baseShowdownId": "lucario",
+      "megaName": "Mega Lucario",
+      "stone": "Lucarionite"
+    },
+    {
+      "baseShowdownId": "malamar",
+      "megaName": "Mega Malamar",
+      "stone": "Malamarite"
+    },
+    {
+      "baseShowdownId": "manectric",
+      "megaName": "Mega Manectric",
+      "stone": "Manectite"
+    },
+    {
+      "baseShowdownId": "mawile",
+      "megaName": "Mega Mawile",
+      "stone": "Mawilite"
+    },
+    {
+      "baseShowdownId": "medicham",
+      "megaName": "Mega Medicham",
+      "stone": "Medichamite"
+    },
+    {
+      "baseShowdownId": "meganium",
+      "megaName": "Mega Meganium",
+      "stone": "Meganiumite"
+    },
+    {
+      "baseShowdownId": "meowstic",
+      "megaName": "Mega Meowstic",
+      "stone": "Meowsticite"
+    },
+    {
+      "baseShowdownId": "meowsticf",
+      "megaName": "Mega Meowstic",
+      "stone": "Meowsticite"
+    },
+    {
+      "baseShowdownId": "metagross",
+      "megaName": "Mega Metagross",
+      "stone": "Metagrossite"
+    },
+    {
+      "baseShowdownId": "pidgeot",
+      "megaName": "Mega Pidgeot",
+      "stone": "Pidgeotite"
+    },
+    {
+      "baseShowdownId": "pinsir",
+      "megaName": "Mega Pinsir",
+      "stone": "Pinsirite"
+    },
+    {
+      "baseShowdownId": "pyroar",
+      "megaName": "Mega Pyroar",
+      "stone": "Pyroarite"
+    },
+    {
+      "baseShowdownId": "raichu",
+      "megaName": "Mega Raichu X",
+      "stone": "Raichunite X"
+    },
+    {
+      "baseShowdownId": "raichu",
+      "megaName": "Mega Raichu Y",
+      "stone": "Raichunite Y"
+    },
+    {
+      "baseShowdownId": "sableye",
+      "megaName": "Mega Sableye",
+      "stone": "Sablenite"
+    },
+    {
+      "baseShowdownId": "sceptile",
+      "megaName": "Mega Sceptile",
+      "stone": "Sceptilite"
+    },
+    {
+      "baseShowdownId": "scizor",
+      "megaName": "Mega Scizor",
+      "stone": "Scizorite"
+    },
+    {
+      "baseShowdownId": "scolipede",
+      "megaName": "Mega Scolipede",
+      "stone": "Scolipite"
+    },
+    {
+      "baseShowdownId": "scovillain",
+      "megaName": "Mega Scovillain",
+      "stone": "Scovillainite"
+    },
+    {
+      "baseShowdownId": "scrafty",
+      "megaName": "Mega Scrafty",
+      "stone": "Scraftinite"
+    },
+    {
+      "baseShowdownId": "sharpedo",
+      "megaName": "Mega Sharpedo",
+      "stone": "Sharpedonite"
+    },
+    {
+      "baseShowdownId": "skarmory",
+      "megaName": "Mega Skarmory",
+      "stone": "Skarmorite"
+    },
+    {
+      "baseShowdownId": "slowbro",
+      "megaName": "Mega Slowbro",
+      "stone": "Slowbronite"
+    },
+    {
+      "baseShowdownId": "staraptor",
+      "megaName": "Mega Staraptor",
+      "stone": "Staraptite"
+    },
+    {
+      "baseShowdownId": "starmie",
+      "megaName": "Mega Starmie",
+      "stone": "Starminite"
+    },
+    {
+      "baseShowdownId": "steelix",
+      "megaName": "Mega Steelix",
+      "stone": "Steelixite"
+    },
+    {
+      "baseShowdownId": "swampert",
+      "megaName": "Mega Swampert",
+      "stone": "Swampertite"
+    },
+    {
+      "baseShowdownId": "tyranitar",
+      "megaName": "Mega Tyranitar",
+      "stone": "Tyranitarite"
+    },
+    {
+      "baseShowdownId": "venusaur",
+      "megaName": "Mega Venusaur",
+      "stone": "Venusaurite"
+    },
+    {
+      "baseShowdownId": "victreebel",
+      "megaName": "Mega Victreebel",
+      "stone": "Victreebelite"
+    }
+  ]
 }

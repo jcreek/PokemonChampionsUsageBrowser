@@ -5,5 +5,5 @@
 - Mega forms: 76
 - Resolved moves: 539
 - Resolved abilities: 200
-- Reviewed held items: 141
+- Reviewed held items: 142
 - Verified: 2026-08-29T11:31:47.851Z
