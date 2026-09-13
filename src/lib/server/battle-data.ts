@@ -138,15 +138,29 @@ export async function getPokemon(format: BattleFormat) {
 function buildPokemon(index: z.infer<typeof indexSchema>, format: BattleFormat, stale: boolean) {
 	const manifest = manifestJson as RegulationManifest;
 	const eligible = new Map(manifest.eligiblePokemon.map((entry) => [entry.showdownId, entry]));
+	const eligibleByBattleDataName = new Map(
+		manifest.eligiblePokemon
+			.filter((entry) => entry.battleDataName)
+			.map((entry) => [entry.battleDataName, entry.showdownId])
+	);
 	const items = new Set<string>(heldItemsJson);
 	const natures = new Set<string>();
 	const pokemon: PokemonRecord[] = [];
 	const seenShowdownIds = new Set<string>();
 
 	for (const raw of index.pokemon) {
-		const showdownId = typeof raw.showdownId === 'string' ? raw.showdownId : '';
+		// Forms Battle Data hasn't mapped to Showdown yet come through as showdownId: null —
+		// the regulation manifest carries the resolved ID keyed by their Battle Data name.
+		const unmapped = typeof raw.showdownId !== 'string';
+		const showdownId = unmapped
+			? (eligibleByBattleDataName.get(String(raw.name)) ?? '')
+			: (raw.showdownId as string);
 		const eligibility = eligible.get(showdownId);
 		if (!eligibility || seenShowdownIds.has(showdownId)) continue;
+		// When the manifest names the Battle Data entry for this form, a stale duplicate
+		// that still carries the same showdownId (e.g. "Paldean Tauros Combat Breed" next
+		// to "Tauros Form 1") must not win just by appearing first in the index.
+		if (eligibility.battleDataName && eligibility.battleDataName !== raw.name) continue;
 		seenShowdownIds.add(showdownId);
 		const summary = (raw.summary ?? {}) as Record<string, unknown>;
 		const primary = (summary.primary ?? {}) as Record<string, unknown>;
@@ -187,8 +201,12 @@ function buildPokemon(index: z.infer<typeof indexSchema>, format: BattleFormat, 
 		const rankedItems = stringArray(values.held_item).map(normalizeHeldItem);
 		const stoneRankIndex = rankedItems.findIndex((item) => allowedMegaStones.has(item));
 		const record: PokemonRecord = {
-			name: String(raw.name ?? eligibility.name),
-			battleName: String(raw.battleName ?? raw.name ?? eligibility.name),
+			// An unmapped form's Battle Data name ("Persian Form 1") is a placeholder — show the
+			// official one ("Persian (Alolan Form)") instead.
+			name: unmapped ? eligibility.name : String(raw.name ?? eligibility.name),
+			battleName: unmapped
+				? eligibility.name
+				: String(raw.battleName ?? raw.name ?? eligibility.name),
 			showdownId,
 			speciesNumber: Number(eligibility.formId.slice(0, 4)) || null,
 			sprite: asset(summary.sprite ?? primary.image_path),
@@ -301,21 +319,29 @@ export async function getUsage(
 ): Promise<UsageSnapshot> {
 	const safeId = showdownId.toLowerCase().replace(/[^a-z0-9]/g, '');
 	if (!safeId) throw new InvalidPokemonIdError('Invalid Pokémon ID.');
+	// Forms Battle Data hasn't mapped to Showdown are only served under their own name
+	// ("Tauros Form 1" → taurosform1); their showdownId there is null.
+	const eligibility = (manifestJson as RegulationManifest).eligiblePokemon.find(
+		(entry) => entry.showdownId === safeId
+	);
+	const apiId = eligibility?.battleDataName
+		? eligibility.battleDataName.toLowerCase().replace(/[^a-z0-9]/g, '')
+		: safeId;
 	const battleSchema = z
-		.object({ pokemon: z.string(), showdownId: z.string(), rows: z.array(z.unknown()) })
+		.object({ pokemon: z.string(), showdownId: z.string().nullable(), rows: z.array(z.unknown()) })
 		.passthrough();
 	const dailySchema = z
 		.object({
 			pokemon: z.string(),
-			showdownId: z.string(),
+			showdownId: z.string().nullable(),
 			daily: z.array(
 				z.object({ season: z.string(), date: z.string(), rows: z.array(z.unknown()) }).passthrough()
 			)
 		})
 		.passthrough();
 	const [current, recent, index] = await Promise.all([
-		cachedJson(`/api/battle/${format}/${safeId}`, 60 * 60 * 1000, battleSchema),
-		cachedJson(`/api/battle/${format}/${safeId}?days=${days}`, 60 * 60 * 1000, dailySchema),
+		cachedJson(`/api/battle/${format}/${apiId}`, 60 * 60 * 1000, battleSchema),
+		cachedJson(`/api/battle/${format}/${apiId}?days=${days}`, 60 * 60 * 1000, dailySchema),
 		cachedJson('/api', 60 * 60 * 1000, indexSchema)
 	]);
 	const currentPosition = (rows: unknown[]) => {
@@ -337,8 +363,8 @@ export async function getUsage(
 		return Number.isNaN(diff) ? 0 : diff;
 	});
 	return {
-		pokemon: current.value.pokemon,
-		showdownId: current.value.showdownId,
+		pokemon: eligibility?.battleDataName ? eligibility.name : current.value.pokemon,
+		showdownId: current.value.showdownId ?? safeId,
 		format,
 		generatedAt: index.value.generatedAt,
 		stale: current.stale || recent.stale || index.stale,

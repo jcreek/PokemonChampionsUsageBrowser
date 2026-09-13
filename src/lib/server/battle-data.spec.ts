@@ -216,6 +216,67 @@ describe('battle-data', () => {
 		});
 	});
 
+	describe('forms Battle Data has not mapped to Showdown', () => {
+		// current-regulation.json maps 0128-001 to taurospaldeacombat via its Battle Data
+		// name "Tauros Form 1"; upstream still also lists a stale labelled entry for it.
+		const unmappedIndex = {
+			generatedAt: '2026-09-13T00:00:00.000Z',
+			dataVersion: 'unmapped-forms',
+			pokemon: [
+				{
+					name: 'Paldean Tauros Combat Breed',
+					showdownId: 'taurospaldeacombat',
+					summary: { battleSummary: { Current: { Doubles: { position: 90 } } } }
+				},
+				{
+					name: 'Tauros Form 1',
+					showdownId: null,
+					summary: { battleSummary: { Current: { Doubles: { position: 12 } } } }
+				}
+			]
+		};
+
+		beforeEach(() => {
+			vi.stubGlobal(
+				'fetch',
+				vi.fn(async (url: string) => {
+					if (url.endsWith('/api')) return jsonResponse(unmappedIndex);
+					if (url.includes('/api/battle/Doubles/taurosform1'))
+						return jsonResponse({
+							pokemon: 'Tauros Form 1',
+							showdownId: null,
+							rows: [],
+							daily: []
+						});
+					return jsonResponse({}, false);
+				})
+			);
+		});
+
+		// battle-data caches the /api index at module level, so earlier tests' fixture would
+		// otherwise be served here — load a fresh copy of the module for this fixture.
+		async function freshModule() {
+			vi.resetModules();
+			return import('./battle-data');
+		}
+
+		it('joins the manifest-named entry, not the stale duplicate, under the official name', async () => {
+			const { getPokemon } = await freshModule();
+			const { pokemon } = await getPokemon('Doubles');
+			const tauros = pokemon.filter((entry) => entry.showdownId === 'taurospaldeacombat');
+			expect(tauros).toHaveLength(1);
+			expect(tauros[0].usage.position).toBe(12);
+			expect(tauros[0].name).toBe('Tauros (Paldean Form (Combat Breed))');
+		});
+
+		it('fetches usage under the Battle Data name and reports the Showdown ID', async () => {
+			const { getUsage } = await freshModule();
+			const snapshot = await getUsage('taurospaldeacombat', 'Doubles', 7);
+			expect(snapshot.showdownId).toBe('taurospaldeacombat');
+			expect(snapshot.pokemon).toBe('Tauros (Paldean Form (Combat Breed))');
+		});
+	});
+
 	describe('getUsage', () => {
 		it('throws a distinguishable error for a malformed id, not a generic failure', async () => {
 			// The API route maps this specifically to 400 rather than a retryable 503 — it

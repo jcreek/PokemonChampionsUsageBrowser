@@ -4,11 +4,17 @@ import { dirname, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { Dex } from '@pkmn/dex';
 
+// The script does not discover new regulations — update this block when one is announced.
+const REGULATION = {
+	id: 'M-C',
+	startsAt: '2026-09-09T02:00:00.000Z',
+	endsAt: '2026-12-02T01:59:00.000Z'
+};
 const NOTICE_URL =
-	process.env.REGULATION_NOTICE_URL ?? 'https://champions-news.pokemon-home.com/en/page/776.html';
+	process.env.REGULATION_NOTICE_URL ?? 'https://champions-news.pokemon-home.com/en/page/816.html';
 const ELIGIBLE_URL =
 	process.env.ELIGIBLE_POKEMON_URL ??
-	'https://web-view.app.pokemonchampions.jp/battle/pages/events/rs178066986988lmoqpm/en/pokemon.html';
+	'https://web-view.app.pokemonchampions.jp/battle/pages/events/rs178713870219xeaaio/en/pokemon.html';
 const API_URL = 'https://championsbattledata.com/api';
 const OUTPUT = resolve('src/lib/data/current-regulation.json');
 const MOVE_OUTPUT = resolve('src/lib/data/move-metadata.json');
@@ -33,6 +39,65 @@ export function splitNames(value) {
 		.filter(Boolean);
 }
 
+// Battle Data lists forms it hasn't mapped to Showdown as "<Species> Form <n>" with
+// showdownId: null. <n> is the in-game form index (the official "-00n" formId suffix), and
+// Showdown's formeOrder lists formes in that same order, so the Showdown ID is recoverable.
+function parseFormName(name) {
+	const match = /^(.+) Form (\d+)$/.exec(String(name ?? ''));
+	return match ? { species: match[1], formIndex: Number(match[2]) } : null;
+}
+
+export function resolveFormShowdownId(name) {
+	const parsed = parseFormName(name);
+	if (!parsed) return null;
+	const base = dex.species.get(parsed.species);
+	const forme = base.exists ? base.formeOrder?.[parsed.formIndex] : undefined;
+	const species = forme ? dex.species.get(forme) : undefined;
+	return species?.exists ? species.id : null;
+}
+
+const hasCurrentData = (entry) =>
+	(entry.battleDataCsvs ?? []).some((csv) => csv.season === 'Current');
+
+/**
+ * Fills in Showdown IDs for "Form <n>" entries. A resolved ID can collide with an older,
+ * labelled entry for the same form (e.g. "Paldean Tauros Combat Breed" vs "Tauros Form 1");
+ * the one still receiving Current-season data wins. If both are (upstream mislabelled one,
+ * as with "Alolan Persian" vs "Persian Form 1"), neither is trusted and both are dropped.
+ */
+export function withResolvedShowdownIds(index) {
+	const pokemon = index.pokemon.map((entry) => {
+		if (entry.showdownId) return entry;
+		const showdownId = resolveFormShowdownId(entry.name);
+		if (!showdownId) return entry;
+		const { formIndex } = parseFormName(entry.name);
+		return { ...entry, showdownId, showdownIdResolved: true, formIndex };
+	});
+	const byId = new Map();
+	for (const entry of pokemon) {
+		if (!entry.showdownId) continue;
+		byId.set(entry.showdownId, [...(byId.get(entry.showdownId) ?? []), entry]);
+	}
+	const dropped = new Set();
+	const collisions = [];
+	for (const [showdownId, entries] of byId) {
+		if (entries.length < 2 || !entries.some((entry) => entry.showdownIdResolved)) continue;
+		const current = entries.filter(hasCurrentData);
+		const kept = current.length === 1 ? current[0] : null;
+		collisions.push({
+			showdownId,
+			entries: entries.map((entry) => entry.name),
+			kept: kept?.name ?? null
+		});
+		for (const entry of entries) if (entry !== kept) dropped.add(entry);
+	}
+	return {
+		...index,
+		pokemon: pokemon.map((entry) => (dropped.has(entry) ? { ...entry, showdownId: null } : entry)),
+		collisions
+	};
+}
+
 function hash(value) {
 	return createHash('sha256').update(value).digest('hex');
 }
@@ -43,7 +108,9 @@ function words(value) {
 		galarian: 'galar',
 		hisuian: 'hisui',
 		paldean: 'paldea',
-		male: 'm',
+		// Showdown's male form is the unsuffixed base ("Meowstic" / "Meowstic-F"), so "Male"
+		// must contribute nothing; mapping it to "m" made "Meowstic (Male)" match "Meowstic-F".
+		male: '',
 		female: 'f'
 	};
 	const tokens = value
@@ -52,7 +119,7 @@ function words(value) {
 		.trim()
 		.split(/\s+/)
 		.map((word) => replacements[word] ?? word)
-		.filter((word) => !['form', 'forme', 'breed', 'variety'].includes(word));
+		.filter((word) => word && !['form', 'forme', 'breed', 'variety'].includes(word));
 	return [...new Set(tokens)].sort();
 }
 
@@ -72,9 +139,12 @@ export function extractEligible(html) {
 	return rows.map(([formId, enabled, name]) => ({ formId, enabled, name }));
 }
 
-function matchRoster(official, index) {
+export function matchRoster(official, index) {
 	const byNumber = new Map();
 	for (const entry of index.pokemon) {
+		// Entries still without a Showdown ID after withResolvedShowdownIds can't be
+		// reconciled (and @pkmn/dex throws on them).
+		if (!entry.showdownId) continue;
 		if (
 			[...byNumber.values()].some((candidates) =>
 				candidates.some((candidate) => candidate.entry.showdownId === entry.showdownId)
@@ -88,19 +158,29 @@ function matchRoster(official, index) {
 		byNumber.set(species.num, candidates);
 	}
 	const used = new Set();
-	return official.map((row) => {
+	const unmatched = [];
+	const eligiblePokemon = official.map((row) => {
 		const number = Number(row.formId.slice(0, 4));
+		const formIndex = Number(row.formId.slice(5));
 		const candidates = (byNumber.get(number) ?? []).filter(
 			({ entry }) => !used.has(entry.showdownId)
 		);
-		if (!candidates.length) throw new Error(`No Battle Data match for ${row.formId} ${row.name}.`);
+		if (!candidates.length) {
+			unmatched.push(row);
+			return null;
+		}
 		const ranked = candidates
 			.map((candidate) => ({
 				...candidate,
-				score: Math.max(
-					similarity(row.name, candidate.entry.name),
-					similarity(row.name, candidate.species.name)
-				)
+				// A "Form <n>" entry names the same in-game form index as the official "-00n"
+				// suffix — an exact match outranks any name similarity (the official name for
+				// Eternal Floette is just "Floette").
+				score:
+					(candidate.entry.formIndex === formIndex ? 100 : 0) +
+					Math.max(
+						similarity(row.name, candidate.entry.name),
+						similarity(row.name, candidate.species.name)
+					)
 			}))
 			.sort((a, b) => b.score - a.score);
 		if (ranked.length > 1 && ranked[0].score === ranked[1].score) {
@@ -110,9 +190,18 @@ function matchRoster(official, index) {
 			if (base) ranked.unshift(ranked.splice(ranked.indexOf(base), 1)[0]);
 			else throw new Error(`Ambiguous Battle Data match for ${row.formId} ${row.name}.`);
 		}
-		used.add(ranked[0].entry.showdownId);
-		return { formId: row.formId, name: row.name, showdownId: ranked[0].entry.showdownId };
+		const { entry } = ranked[0];
+		used.add(entry.showdownId);
+		// The app joins Battle Data's index on showdownId; for IDs resolved here it has
+		// nothing to join on, so record the Battle Data name it can match instead.
+		return {
+			formId: row.formId,
+			name: row.name,
+			showdownId: entry.showdownId,
+			...(entry.showdownIdResolved ? { battleDataName: entry.name } : {})
+		};
 	});
+	return { eligiblePokemon: eligiblePokemon.filter(Boolean), unmatched };
 }
 
 export function megaRules(index, eligibleIds) {
@@ -122,14 +211,11 @@ export function megaRules(index, eligibleIds) {
 		const forms = pokemon.summary?.forms ?? [];
 		for (const form of forms.filter((entry) => String(entry.form_kind).startsWith('Mega'))) {
 			const itemNames = pokemon.summary?.battleSummary?.Current?.Doubles?.values?.held_item ?? [];
-			const expected = form.form_name.toLowerCase().includes(' x')
-				? ' x'
-				: form.form_name.toLowerCase().includes(' y')
-					? ' y'
-					: '';
-			// Mega Stones are named "<Species>ite" ("Mawilite") or "<Species>ite X"/"Y" for
-			// multi-mega species ("Charizardite X") — match on that suffix, not on "ite"
-			// appearing anywhere in the name (which false-matches e.g. "White Herb").
+			const suffix = form.form_name.match(/ ([xyz])$/i);
+			const expected = suffix ? ` ${suffix[1].toLowerCase()}` : '';
+			// Mega Stones are named "<Species>ite" ("Mawilite") or "<Species>ite X"/"Y"/"Z" for
+			// multi-mega species ("Charizardite X", "Absolite Z") — match on that suffix, not on
+			// "ite" appearing anywhere in the name (which false-matches e.g. "White Herb").
 			const looksLikeStone = (name) => {
 				const lower = name.toLowerCase().trim();
 				const base = expected ? lower.slice(0, -expected.length) : lower;
@@ -161,9 +247,13 @@ async function main() {
 		fetchText(ELIGIBLE_URL),
 		fetchText(API_URL)
 	]);
-	const index = JSON.parse(apiText);
+	const index = withResolvedShowdownIds(JSON.parse(apiText));
 	const official = extractEligible(eligibleHtml);
-	const eligiblePokemon = matchRoster(official, index);
+	const { eligiblePokemon, unmatched } = matchRoster(official, index);
+	// A handful of forms Battle Data hasn't (reliably) mapped yet are left out and reported;
+	// many more than that means something is wrong with the source data, so fail closed.
+	if (unmatched.length > 10)
+		throw new Error(`Too many official forms without a Battle Data match: ${unmatched.length}.`);
 	const ids = new Set(eligiblePokemon.map((entry) => entry.showdownId));
 	if (ids.size !== eligiblePokemon.length) throw new Error('Duplicate Showdown IDs were produced.');
 
@@ -179,10 +269,10 @@ async function main() {
 		previous?.sourceHashes?.eligiblePokemon === sourceHashes.eligiblePokemon;
 	const manifest = {
 		schemaVersion: 1,
-		id: 'M-B',
-		title: 'Regulation Set M-B',
-		startsAt: '2026-06-17T02:00:00.000Z',
-		endsAt: '2026-09-09T01:59:00.000Z',
+		id: REGULATION.id,
+		title: `Regulation Set ${REGULATION.id}`,
+		startsAt: REGULATION.startsAt,
+		endsAt: REGULATION.endsAt,
 		verifiedAt: unchangedSources ? previous.verifiedAt : new Date().toISOString(),
 		sources: { notice: NOTICE_URL, eligiblePokemon: ELIGIBLE_URL },
 		sourceHashes,
@@ -201,8 +291,11 @@ async function main() {
 		megaEvolutions: megaRules(index, ids)
 	};
 
-	if (!noticeHtml.includes('Regulation Set M-B') || !noticeHtml.includes('Duplicate held items')) {
-		throw new Error('Required M-B rule text was not found in the official notice.');
+	if (
+		!noticeHtml.includes(`Regulation Set ${REGULATION.id}`) ||
+		!noticeHtml.includes('Duplicate held items')
+	) {
+		throw new Error(`Required ${REGULATION.id} rule text was not found in the official notice.`);
 	}
 	if (manifest.megaEvolutions.length < 20)
 		throw new Error(`Implausible Mega roster size: ${manifest.megaEvolutions.length}.`);
@@ -270,10 +363,23 @@ async function main() {
 		)
 	].sort();
 	await writeFile(ITEM_OUTPUT, `${JSON.stringify(heldItems, null, 2)}\n`);
+	const unmatchedReport = unmatched.length
+		? `\n## Left out: no reliable Battle Data match\n\n${unmatched.map((row) => `- ${row.formId} ${row.name}`).join('\n')}\n`
+		: '';
+	const collisionReport = index.collisions.length
+		? `\n## Battle Data entries claiming the same form\n\n${index.collisions
+				.map(
+					(collision) =>
+						`- ${collision.showdownId}: ${collision.entries.join(' / ')} → ${collision.kept ? `kept "${collision.kept}"` : 'both have current data, neither used'}`
+				)
+				.join('\n')}\n`
+		: '';
 	await writeFile(
 		REPORT,
-		`# Regulation validation\n\n- Regulation: ${manifest.id}\n- Eligible forms: ${eligiblePokemon.length}\n- Mega forms: ${manifest.megaEvolutions.length}\n- Resolved moves: ${moveNames.length}\n- Resolved abilities: ${abilityNames.length}\n- Reviewed held items: ${heldItems.length}\n- Verified: ${manifest.verifiedAt}\n`
+		`# Regulation validation\n\n- Regulation: ${manifest.id}\n- Eligible forms: ${eligiblePokemon.length} of ${official.length}\n- Mega forms: ${manifest.megaEvolutions.length}\n- Resolved moves: ${moveNames.length}\n- Resolved abilities: ${abilityNames.length}\n- Reviewed held items: ${heldItems.length}\n- Verified: ${manifest.verifiedAt}\n${unmatchedReport}${collisionReport}`
 	);
+	for (const row of unmatched)
+		console.warn(`Left out (no reliable Battle Data match): ${row.formId} ${row.name}`);
 	console.log(
 		`Validated ${manifest.id}: ${eligiblePokemon.length} forms, ${manifest.megaEvolutions.length} Mega forms.`
 	);
