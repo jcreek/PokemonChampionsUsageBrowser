@@ -87,6 +87,9 @@ export type EligiblePokemon = {
 	formId: string;
 	name: string;
 	showdownId: string;
+	/** Set when Battle Data's index has no showdownId for this form — the index entry's
+	 *  name to join on instead (see resolveFormShowdownId in scripts/update-regulation.mjs). */
+	battleDataName?: string;
 };
 
 export type MegaEvolutionRule = {

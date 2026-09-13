@@ -6,8 +6,13 @@ import type { RegulationManifest } from './types';
 const manifest = manifestJson as RegulationManifest;
 
 describe('regulationIsActive', () => {
+	// Derived from the manifest so the test doesn't need editing for every new regulation.
 	it('fails closed outside the reviewed regulation dates', () => {
-		expect(regulationIsActive(manifest, new Date('2026-08-29T12:00:00Z'))).toBe(true);
-		expect(regulationIsActive(manifest, new Date('2026-09-10T00:00:00Z'))).toBe(false);
+		const start = new Date(manifest.startsAt).getTime();
+		const end = new Date(manifest.endsAt).getTime();
+		expect(regulationIsActive(manifest, new Date(start))).toBe(true);
+		expect(regulationIsActive(manifest, new Date(end - 1))).toBe(true);
+		expect(regulationIsActive(manifest, new Date(start - 1))).toBe(false);
+		expect(regulationIsActive(manifest, new Date(end))).toBe(false);
 	});
 });
